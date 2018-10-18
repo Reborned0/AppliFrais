@@ -1,0 +1,4 @@
+function Numérique()
+{
+  alert("Resultat");
+}

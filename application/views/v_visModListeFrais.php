@@ -69,6 +69,7 @@
 			}
 		?>
 
+</script>
 </table>
 
 	<form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
@@ -77,7 +78,7 @@
 				<legend>Nouvel élément hors forfait</legend>
 				<p>
 					<label for="txtDateHF">Date (jj/mm/aaaa): </label>
-					<input onchange="Numérique()" type="text" id="txtDateHF" name="dateFrais" size="10" maxlength="10" value=""  />
+					<input type="text" id="txtDateHF" name="dateFrais" size="10" maxlength="10" value=""  />
 				</p>
 				<p>
 					<label for="txtLibelleHF">Libellé</label>

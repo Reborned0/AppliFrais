@@ -22,7 +22,7 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="number" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" min="0" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
 					}

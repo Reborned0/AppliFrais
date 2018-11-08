@@ -25,7 +25,7 @@
 						</p>
 						';
 						$qtetotal += $quantite;
-						$res = total($quantite);
+					
 					}
 
 				echo

@@ -1,7 +1,6 @@
 function Numérique()
 {
-  alert("test");
-
+  alert('test');
 }
 
 function total(param)

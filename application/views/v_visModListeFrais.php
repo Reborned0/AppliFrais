@@ -9,8 +9,9 @@
 		<div class="corpsForm">
 
 			<fieldset>
-				<legend>Eléments forfaitisésffffff</legend>
+				<legend>Eléments forfaitisés</legend>
 				<?php
+				$qtetotal = 0;
 					foreach ($lesFraisForfait as $unFrais)
 					{
 						$idFrais = $unFrais['idfrais'];
@@ -23,9 +24,16 @@
 							<input type="text" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
+						$qtetotal += $quantite;
 					}
-				?>
 
+				echo
+				'<p>
+				<label>Total </label>
+				<input disabled type="text" name="Total" size="10" maxlength="5" value="'.$qtetotal.'" />
+				</p>
+				';
+				?>
 			</fieldset>
 
 		</div>

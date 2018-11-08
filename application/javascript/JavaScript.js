@@ -1,4 +1,4 @@
-function Numérique()
+function maNumérique()
 {
   alert('test');
 }

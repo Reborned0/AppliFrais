@@ -1,4 +1,4 @@
-function NonNumérique()
+function PasAlpha()
 {
   alert("test");
   alert(genCharArray('a','z','A','Z'));

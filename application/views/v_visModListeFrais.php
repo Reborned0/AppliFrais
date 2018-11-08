@@ -3,14 +3,13 @@
 ?>
 <div id="contenu">
 	<h2>Renseigner ma fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?></h2>
-
 	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
 
 	<form method="post"  action="<?php echo base_url("c_visiteur/majForfait");?>">
 		<div class="corpsForm">
 
 			<fieldset>
-				<legend>Eléments forfaitisés</legend>
+				<legend>Eléments forfaitisésffffff</legend>
 				<?php
 					foreach ($lesFraisForfait as $unFrais)
 					{

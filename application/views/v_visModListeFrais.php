@@ -9,7 +9,7 @@
 		<div class="corpsForm">
 
 			<fieldset>
-				<legend>Eléments forfaitisésffffff</legend>
+				<legend>Eléments forfaitisés</legend>
 				<?php
 					foreach ($lesFraisForfait as $unFrais)
 					{
@@ -20,7 +20,7 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeypress="Numérique()" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
 					}

@@ -26,7 +26,7 @@
 						</p>
 						';
 						$test += $quantite;
-						echo $test;
+					//	echo $test;
 					}
 
 				echo

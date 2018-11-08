@@ -71,6 +71,8 @@
 </script>
 </table>
 
+<?php if (isset($erreur2))	echo '<div class ="erreur2"><ul><li>'.$erreur2.'</li></ul></div>'; ?>
+
 	<form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
 		<div class="corpsForm">
 			<fieldset>

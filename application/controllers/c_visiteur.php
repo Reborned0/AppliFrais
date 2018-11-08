@@ -110,7 +110,7 @@ class C_visiteur extends CI_Controller {
 				// obtention de l'id du visiteur et du mois concerné
 				$idVisiteur = $this->session->userdata('idUser');
 				$mois = $this->session->userdata('mois');
-
+				
 				// obtention des données postées
 				$lesFrais = $this->input->post('lesFrais');
 

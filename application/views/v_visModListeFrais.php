@@ -21,11 +21,15 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeypress="NonAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
 						$qtetotal += $quantite;
+<<<<<<< HEAD
 						echo total($quantite);
+=======
+
+>>>>>>> ec6e9aa111b58027b969802e8e1335c614af81f3
 					}
 
 				echo

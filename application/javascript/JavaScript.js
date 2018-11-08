@@ -17,9 +17,9 @@ function genCharArray(charA,charZ,chara,charz) {
   return a;
 }
 
-function total($param)
+function total(param)
 {
-  document.getElementByValue($param);
-  $test += $param;
-  return $test
+  document.getElementByValue('param');
+  var test += param;
+  return test
 }

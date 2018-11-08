@@ -81,7 +81,7 @@
 				</p>
 				<p>
 					<label for="txtLibelleHF">Libellé</label>
-					<input type="text" id="txtLibelleHF" name="libelle" size="60" maxlength="256" value="" />
+					<input type="text" id="txtLibelleHF" required name="libelle" size="60" maxlength="256" value="" />
 				</p>
 				<p>
 					<label for="txtMontantHF">Montant : </label>

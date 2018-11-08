@@ -25,12 +25,13 @@
 						</p>
 						';
 						$qtetotal += $quantite;
+						$res = total($quantite);
 					}
 
 				echo
 				'<p>
 				<label>Total </label>
-				<input disabled type="text" name="Total" size="10" maxlength="5" value="'.$qtetotal.'" />
+				<input disabled type="text" name="Total" size="10" maxlength="5" value="'.$res.'" />
 				</p>
 				';
 				?>

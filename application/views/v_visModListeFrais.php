@@ -27,13 +27,6 @@
 						$qtetotal += $quantite;
 
 					}
-
-				echo
-				'<p>
-				<label>Total </label>
-				<input disabled type="text" name="Total" size="10" maxlength="5" value="" />
-				</p>
-				';
 				?>
 			</fieldset>
 

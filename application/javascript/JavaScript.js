@@ -21,11 +21,9 @@ function genCharArray(charA,charZ,chara,charz) {
 
 function test(param)
 {
-  alert("Changement");
-  var x = 0;
-  x = param;
-  alert(x);
-
+  alert(param);
+  parseInt(param) += param;
+  alert(parseInt(param));
 }
 
 function total(param)

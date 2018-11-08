@@ -11,7 +11,7 @@
 			<fieldset>
 				<legend>Eléments forfaitisés</legend>
 				<?php
-				$qtetotal = 0;
+				$test = 0;
 					foreach ($lesFraisForfait as $unFrais)
 					{
 						$idFrais = $unFrais['idfrais'];
@@ -21,17 +21,18 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeypress="NonAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeypress="NonAlpha()" onchange="total()" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+
 						</p>
 						';
-						$qtetotal += $quantite;
-						
+						$test += $quantite;
+						echo $test;
 					}
 
 				echo
 				'<p>
 				<label>Total </label>
-				<input disabled type="text" name="Total" size="10" maxlength="5" value="<script>total('.$quantite.');</script>" />
+				<input disabled type="text" name="Total" size="10" maxlength="5" value="'.$test.'" />
 				</p>
 				';
 				?>

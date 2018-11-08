@@ -2,8 +2,9 @@ function maNumérique(ValueInput)
 {
   var Inputvalue = ValueInput.value.length;
   var TabAlpha = genCharArray('a','z','A','Z');
-  if (TabAlpha.includes(ValueInput[Inputvalue-1])) {
-
+  if (TabAlpha.includes(ValueInput[Inputvalue]) ) {
+  }else {
+    alert("False");
   }
 }
 

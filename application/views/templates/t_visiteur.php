@@ -11,7 +11,7 @@
 		<title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link href="<?php echo $v_path.'/templates/css/styles.css' ?>" rel="stylesheet" type="text/css" />
-		<script src="<?=base_url('application/javascript/JavaScript.js')?>"></script>
+		<script src="<?=base_url('Application/javascript/JavaScript.js')?>"></script>
 		<script type="JavaScript">
 			function hideNotify() {
 				document.getElementById("notify").style.display = "none";

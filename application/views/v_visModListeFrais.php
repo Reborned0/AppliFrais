@@ -21,18 +21,18 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeypress="maNumérique()" onchange="total(this.value)" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeypress="maNumérique()" onchange="test('.$quantite.')" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 
 						</p>
 						';
-						$test += $quantite;
-						echo $test;
+
 					}
+
 
 				echo
 				'<p>
 				<label>Total </label>
-				<input disabled type="text" name="Total" size="10" maxlength="5" value="'.$test.'" />
+				<input disabled type="text" name="Total" size="10" maxlength="5" value="	" />
 				</p>
 				';
 				?>

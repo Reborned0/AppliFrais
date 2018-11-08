@@ -1,6 +1,5 @@
-function maNumérique()
+function PasAlpha()
 {
-
 }
 
 function genCharArray(charA,charZ,chara,charz) {
@@ -15,7 +14,17 @@ function genCharArray(charA,charZ,chara,charz) {
   return a;
 }
 
+function test(param)
+{
+  alert("Changement");
+  var x = 0;
+  x = param;
+  alert(x);
+
+}
+
 function total(param)
 {
-  alert("chiffre");
+
+
 }

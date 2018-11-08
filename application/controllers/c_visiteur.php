@@ -122,7 +122,11 @@ class C_visiteur extends CI_Controller {
 			elseif ($action == 'ajouteFrais') // ajouteLigneFrais demandé : on active la fonction ajouteLigneFrais du modèle visiteur ...
 			{	// TODO : conrôler que l'obtention des données postées ne rend pas d'erreurs
 				// TODO : dans la dynamique de l'application, contrôler que l'on vient bien de modFiche
-
+				if($_POST["txtDateHF"] == "" || $_POST['txtLibelleHF'] == "" || $_POST['txtMontantHF'] == ""){
+					$data = array('erreur2' => 'Veuillez remplir toutes les cases');
+					$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
+				}
+				else {
 					$this->load->model('a_visiteur');
 
 					// obtention de l'id du visiteur et du mois concerné
@@ -140,7 +144,7 @@ class C_visiteur extends CI_Controller {
 
 					// ... et on revient en modification de la fiche
 					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');
-				
+				}
 
 			}
 			elseif ($action == 'supprFrais') // suppprLigneFrais demandé : on active la fonction suppprLigneFrais du modèle visiteur ...

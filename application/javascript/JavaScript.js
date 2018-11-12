@@ -1,12 +1,7 @@
 function maNumérique(ValueInput)
 {
-  alert(ValueInput.value);
   var Inputvalue = ValueInput.value;
   var TabAlpha = genCharArray('a','z','A','Z');
-/*  if (TabAlpha.includes(ValueInput[Inputvalue]) ) {
-  }else {
-    alert("False");
-  }*/
 }
 
 function genCharArray(charA,charZ,chara,charz) {

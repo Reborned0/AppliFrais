@@ -18,18 +18,17 @@ function ChercheAlpha(valueinput){
   {
     valueinput.value = ValeurInput.substring(0,IndexFin);
   }
+
 }
 
+
 function calculForfait(valueinput2) {
-var total = 0;
-var chosen = 0;
-
-//Si qqchse de non vide est saisi on ajoute le prix
-//Condition a modifier si le format du code doit etre vérifié...
-if (document.getElementById('chosen').value==true) {
-chosen = 199;
-}else{}
-total = total + choix + chosen;
-
-document.getElementById('Total').display = 1;
+  var ValeurInputs,Input1;
+  var total=0;
+  ValeurInputs = document.getElementsByClassName('SearchAlpha');
+  for(var i=0; i< ValeurInputs.length;i++){
+    Input1 = parseInt(ValeurInputs[i].value);
+    total+= Input1;
+  }
+  document.getElementById('Total').value = total;
 }

@@ -18,7 +18,6 @@ function ChercheAlpha(valueinput){
   {
     valueinput.value = ValeurInput.substring(0,IndexFin);
   }
-
 }
 
 

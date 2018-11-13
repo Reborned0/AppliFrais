@@ -13,7 +13,7 @@ function calculForfait() {
 var total = 0;
 for (var i = 1; i < 2; i++) {
 var choix = 0;
-choix = parseInt(document.getElementByValue('forfait');
+choix = parseInt(document.getElementByValue('');
 var chosen = 0;
 
 //Si qqchse de non vide est saisi on ajoute le prix

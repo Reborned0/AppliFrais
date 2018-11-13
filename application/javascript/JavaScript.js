@@ -1,7 +1,7 @@
-function maNumérique(ValueInput)
+function maNumérique()
 {
-  var Inputvalue = ValueInput.value;
-  alert(ValueInput);
+  var Recup= document.getElementsByClassName(InputVal);
+  alert(Recup);
   var TabAlpha = genCharArray('a','z','A','Z');
 }
 

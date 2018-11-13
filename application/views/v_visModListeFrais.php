@@ -21,7 +21,7 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeyup="jesuisunours(this.value)" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeyup="pasDeCarac(this.value)" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 
 						</p>
 						';
@@ -31,7 +31,7 @@
 				echo
 				'<p>
 				<label>Total </label>
-				<input disabled type="text" name="Total" size="10" maxlength="5" value="	" />
+				<input disabled type="text" name="Total" id="Total" size="10" maxlength="5" value="" />
 				</p>
 				';
 				?>

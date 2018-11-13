@@ -21,7 +21,7 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeyup="maNumérique(this);"  id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeyup="antialpha()"  id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 
 						</p>
 						';
@@ -29,7 +29,6 @@
 
 					}
 
-					$trrr = ;
 				echo
 				'<p>
 				<label>Total </label>

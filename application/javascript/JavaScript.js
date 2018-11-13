@@ -1,12 +1,6 @@
-function antialpha()
-{
-  alert('test');
-}
-
 function test(param)
 {
-  alert(param);
-  return unTest;
+    alert(param);
 }
 
 function calculForfait() {

@@ -25,11 +25,11 @@
 
 						</p>
 						';
-						$test += $quantite;
+
 
 					}
 
-
+					$trrr = ;
 				echo
 				'<p>
 				<label>Total </label>

@@ -18,8 +18,7 @@ function genCharArray(charA,charZ,chara,charz) {
 function test(param)
 {
   alert(param);
-  parseInt(param) += param;
-  alert(parseInt(param));
+
 }
 
 function total(param)

@@ -1,12 +1,11 @@
-function antialpha()
+function antialpha(param1)
 {
-  alert('test');
+  alert(param1);
 }
 
 function test(param)
 {
   alert(param);
-  return unTest;
 }
 
 function total(param)

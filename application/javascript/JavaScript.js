@@ -1,7 +1,3 @@
-function test(param){
-  alert(param);
-}
-
 function calculForfait() {
 var total = 0;
 var chosen = 0;
@@ -15,4 +11,8 @@ total = total + choix + chosen;
 }
 
 document.setElementById('Total').value = test;
+}
+
+function myFonction(){
+  console.log(1);
 }

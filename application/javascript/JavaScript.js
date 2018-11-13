@@ -14,5 +14,5 @@ chosen = 199;
 total = total + choix + chosen;
 }
 
-document.getElementById('Total').value = "test";
+document.setElementById('Total').value = test;
 }

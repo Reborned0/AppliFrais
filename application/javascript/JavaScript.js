@@ -1,4 +1,4 @@
-function pasDeCarac(param){
+function test(param){
   alert(param);
 }
 

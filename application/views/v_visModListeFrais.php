@@ -22,11 +22,6 @@
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
 							<input type="text" onkeyup="pasDeCarac(this.value)" onchange="alert()" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
-							<script> function pasDeCarac(param){
-								var TableauAlpha = genCharArray("a","z","A","Z");
-								alert(TableauAlpha);
-							}
-							</script>
 						</p>
 						';
 					}

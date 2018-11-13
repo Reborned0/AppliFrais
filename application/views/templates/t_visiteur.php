@@ -11,16 +11,16 @@
 		<title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link href="<?php echo $v_path.'/templates/css/styles.css' ?>" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="<?=base_url('Application/javascript/JavaScript.js')?>"></script>
+
 		<script type="JavaScript">
 			function hideNotify() {
 				document.getElementById("notify").style.display = "none";
 			}
 		</script>
-
+<script language="JavaScript" src="/Application/JavaScript/JavaS.js" type="text/javascript" ></script>
 	</head>
 
-	<body onload="setTimeout(hideNotify,7000);">
+	<body onload="setTimeout(hideNotify,7000)">
 		<div id="page">
 			<div id="entete">
 				<img src="<?php echo $v_path.'/templates/images/logo.jpg'?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />

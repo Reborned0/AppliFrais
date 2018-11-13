@@ -9,7 +9,7 @@ function genCharArray(charA,charZ,chara,charz) {
   return a;
 }
 
-function alert(){}
+function alerta(){ alert();}
 function calculForfait() {
 var total = 0;
 var chosen = 0;
@@ -21,4 +21,14 @@ chosen = 199;
 }
 total = total + choix + chosen;
 
-document.getElementById('Total').display = 1;}
+document.getElementById('Total').display = 1;
+}
+function pasDeCarac(param){
+ var TableauAlpha = genCharArray("a","z","A","Z");
+ if(param==a){
+   alert(param);
+ }
+ else {
+   alert("false");
+ }
+}

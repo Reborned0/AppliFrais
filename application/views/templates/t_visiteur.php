@@ -12,12 +12,12 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link href="<?php echo $v_path.'/templates/css/styles.css' ?>" rel="stylesheet" type="text/css" />
 
-		<script type="JavaScript">
+		<script type="text/javascript">
 			function hideNotify() {
 				document.getElementById("notify").style.display = "none";
 			}
 		</script>
-<script language="JavaScript" src="/Application/JavaScript/JavaS.js" type="text/javascript" ></script>
+<script src="<?= base_url().'Application/JavaScript/JavaS.js'?>" type="text/javascript" ></script>
 	</head>
 
 	<body onload="setTimeout(hideNotify,7000)">

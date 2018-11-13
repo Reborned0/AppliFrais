@@ -2,6 +2,10 @@ function pasDeCarac(param){
   alert(param);
 }
 
+function alert(){
+
+}
+
 function calculForfait() {
 var total = 0;
 var chosen = 0;
@@ -12,7 +16,6 @@ if (document.getElementById('chosen' ).value {
 chosen = 199;
 }
 total = total + choix + chosen;
-}
 
-document.setElementById('Total').value = test;
+document.getElementById('Total').display = 1;
 }

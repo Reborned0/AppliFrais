@@ -21,12 +21,12 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-<<<<<<< HEAD
-							<input type="text" onchange="Fonction()" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
-=======
-							<input type="text" onkeyup="pasDeCarac()" onchange="alert()" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
->>>>>>> 00243b410da1b0bafbb3f14677ba56cdf6b36f54
-
+							<input type="text" onkeyup="pasDeCarac(this.value)" onchange="alert()" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<script> function pasDeCarac(param){
+								var TableauAlpha = genCharArray("a","z","A","Z");
+								alert(TableauAlpha);
+							}
+							</script>
 						</p>
 						';
 					}

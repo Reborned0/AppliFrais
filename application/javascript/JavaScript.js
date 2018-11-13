@@ -1,14 +1,15 @@
-<<<<<<< HEAD
-=======
-function pasDeCarac(param){
-  alert(param);
+function genCharArray(charA,charZ,chara,charz) {
+  var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0), k = chara.charCodeAt(0), l = charz.charCodeAt(0);
+  for (; i <= j; ++i) {
+    a.push(String.fromCharCode(i));
+  }
+  for(;k <= l; k++){
+    a.push(String.fromCharCode(k));
+  }
+  return a;
 }
 
-function alert(){
-
-}
-
->>>>>>> 00243b410da1b0bafbb3f14677ba56cdf6b36f54
+function alert(){}
 function calculForfait() {
 var total = 0;
 var chosen = 0;
@@ -20,9 +21,4 @@ chosen = 199;
 }
 total = total + choix + chosen;
 
-document.getElementById('Total').display = 1;
-}
-
-function myFonction(){
-  console.log(1);
-}
+document.getElementById('Total').display = 1;}

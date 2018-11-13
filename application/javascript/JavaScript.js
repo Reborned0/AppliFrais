@@ -19,7 +19,7 @@ function genCharArray(charA,charZ,chara,charz) {
 function test(param)
 {
   alert(param);
-
+  return unTest;
 }
 
 function total(param)

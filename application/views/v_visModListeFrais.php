@@ -26,10 +26,8 @@
 						</p>
 						';
 
-
 					}
 
-					$trrr = ;
 				echo
 				'<p>
 				<label>Total </label>

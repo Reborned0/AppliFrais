@@ -1,3 +1,4 @@
+
 <?php
 	$this->load->helper('url');
 ?>
@@ -11,7 +12,7 @@
 			<fieldset>
 				<legend>Eléments forfaitisés</legend>
 				<?php
-				$test = 0;
+				$pasDeCarac=0;
 					foreach ($lesFraisForfait as $unFrais)
 					{
 						$idFrais = $unFrais['idfrais'];
@@ -21,8 +22,7 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeyup="pasDeCarac()" onchange="alert()" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
-
+							<input type="text" onkeyup="ChercheAlpha(this);calculForfait(this);" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
 					}

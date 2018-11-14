@@ -10,7 +10,7 @@
 		<div class="corpsForm">
 
 			<fieldset>
-				<legend>Eléments forfaitisés</legend>
+				<legend>Eléments forfaitiséss</legend>
 				<?php
 				$pasDeCarac=0;
 					foreach ($lesFraisForfait as $unFrais)

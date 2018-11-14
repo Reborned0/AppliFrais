@@ -225,7 +225,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'mcjioçqzqz3';
+$config['encryption_key'] = 'mcjioï¿½qzqz3';
 
 /*
 |--------------------------------------------------------------------------
@@ -357,7 +357,6 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
-
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

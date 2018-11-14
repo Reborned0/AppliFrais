@@ -10,7 +10,7 @@
 
 	<form method="post" action="<?php echo $path.'c_default/connecter';?>">
 		<p>
-			<label for="login">Login*</label>
+			<label for="login">Logins*</label>
 			<input id="login" type="text" name="login"  size="30" maxlength="45"/>
 		</p>
 		<p>

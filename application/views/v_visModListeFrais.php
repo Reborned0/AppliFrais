@@ -21,7 +21,7 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeyup="ChercheAlpha(this);calculForfait(this);" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeyup="ChercheAlpha(this);calculForfait(this);" onkeypress="ChercheAlpha(this);calculForfait(this);" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
 					}
@@ -95,7 +95,7 @@
 				</p>
 				<p>
 					<label for="txtMontantHF">Montant : </label>
-					<input type="text" id="txtMontantHF" required name="montant" size="10" maxlength="10" value="" />
+					<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
 				</p>
 			</fieldset>
 		</div>

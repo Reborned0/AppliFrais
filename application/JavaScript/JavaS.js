@@ -1,22 +1,26 @@
 
-function genCharArray(charA,charZ,chara,charz) {
-  var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0), k = chara.charCodeAt(0), l = charz.charCodeAt(0);
-  for (; i <= j; ++i) {
-    a.push(String.fromCharCode(i));
+function genCharArray() {
+  var a = [],test;
+  for(var i=0;i<128;++i){
+       a.push(String.fromCharCode(i));
   }
-  for(;k <= l; k++){
-    a.push(String.fromCharCode(k));
-  }
+for(var j=0;j<10;j++){
+  test = a.indexOf(j.toString());
+  a.splice(test,1);
+}
+
   return a;
 }
 function ChercheAlpha(valueinput){
-  var ValeurInput, TableauAlpha, IndexFin;
+  var ValeurInput, TableauAlpha, IndexFin, ValeurDebut, ValeurFin;
   ValeurInput = valueinput.value;
   IndexFin = ValeurInput.length -1;
-  TableauAlpha = genCharArray('a','z','A','Z');
+  TableauAlpha = genCharArray();
+  alert(TableauAlpha);
   if(TableauAlpha.includes(ValeurInput[IndexFin]))
   {
     valueinput.value = ValeurInput.substring(0,IndexFin);
+
   }
 }
 

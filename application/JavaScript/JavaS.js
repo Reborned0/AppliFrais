@@ -1,14 +1,13 @@
 
 function genCharArray() {
-  var a = [],test;
+  var a = [], num;
   for(var i=0;i<1000;++i){
        a.push(String.fromCharCode(i));
   }
-for(var j=0;j<10;j++){
-  test = a.indexOf(j.toString());
-  a.splice(test,1);
+for(var j=0;j<=9;j++){
+  num = a.indexOf(j.toString());
+  a.splice(num,1);
 }
-
   return a;
 }
 function ChercheAlpha(valueinput){
@@ -24,7 +23,7 @@ function ChercheAlpha(valueinput){
 }
 
 
-function calculForfait(valueinput2) {
+function calculForfait() {
   var ValeurInputs,Input1;
   var total=0;
   ValeurInputs = document.getElementsByClassName('SearchAlpha');

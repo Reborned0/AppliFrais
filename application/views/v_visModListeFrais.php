@@ -21,7 +21,7 @@
 						echo
 						'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeyup="ChercheAlpha(this);calculForfait(this);" onkeypress="ChercheAlpha(this);calculForfait(this);" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeyup="ChercheAlpha(this);calculForfait();" onkeypress="ChercheAlpha(this);calculForfait();" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
 					}
@@ -87,7 +87,7 @@
 				<legend>Nouvel élément hors forfait</legend>
 				<p>
 					<label for="txtDateHF">Date (jj/mm/aaaa): </label>
-					<input type="text" id="txtDateHF" required name="dateFrais" size="10" maxlength="10" value=""  />
+					<input type="date" id="txtDateHF" required name="dateFrais" size="10" maxlength="10" value=""  />
 				</p>
 				<p>
 					<label for="txtLibelleHF">Libellé</label>

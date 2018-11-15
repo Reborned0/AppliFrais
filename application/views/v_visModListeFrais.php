@@ -10,7 +10,7 @@ $this->load->helper('url');
 		<div class="corpsForm">
 
 			<fieldset>
-				<legend>Eléments forfaitisés</legend>
+				<legend>Eléments forfaitisés2</legend>
 				<table style="text-align: left; width : 90%; ">
 
 					<?php

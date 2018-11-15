@@ -42,8 +42,8 @@ function calculTotalFrais(value1){
     valeurQuant = parseInt(valeurFrais[i].value);
     totalFr = valeurQuant * value1;
     total1+= totalFr;
-    document.getElementsByClassName('1').value = "10";
-  }
 
-  document.getElementById('TotalFrais').value = total1;
+  }
+  document.getElementsByClassName('1').value = "10";
+  document.getElementById('TotalFrais').value = "total1";
 }

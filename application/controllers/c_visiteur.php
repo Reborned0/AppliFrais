@@ -110,7 +110,7 @@ class C_visiteur extends CI_Controller {
 				// obtention de l'id du visiteur et du mois concerné
 				$idVisiteur = $this->session->userdata('idUser');
 				$mois = $this->session->userdata('mois');
-				
+
 				// obtention des données postées
 				$lesFrais = $this->input->post('lesFrais');
 
@@ -122,30 +122,24 @@ class C_visiteur extends CI_Controller {
 			elseif ($action == 'ajouteFrais') // ajouteLigneFrais demandé : on active la fonction ajouteLigneFrais du modèle visiteur ...
 			{	// TODO : conrôler que l'obtention des données postées ne rend pas d'erreurs
 				// TODO : dans la dynamique de l'application, contrôler que l'on vient bien de modFiche
-				if($_POST["txtDateHF"] == "" || $_POST['txtLibelleHF'] == "" || $_POST['txtMontantHF'] == ""){
-					$data = array('erreur2' => 'Veuillez remplir toutes les cases');
-					$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
-				}
-				else {
-					$this->load->model('a_visiteur');
 
-					// obtention de l'id du visiteur et du mois concerné
-					$idVisiteur = $this->session->userdata('idUser');
-					$mois = $this->session->userdata('mois');
+				$this->load->model('a_visiteur');
 
-					// obtention des données postées
-					$uneLigne = array(
-						'dateFrais' => $this->input->post('dateFrais'),
-						'libelle' => $this->input->post('libelle'),
-						'montant' => $this->input->post('montant')
-					);
+				// obtention de l'id du visiteur et du mois concerné
+				$idVisiteur = $this->session->userdata('idUser');
+				$mois = $this->session->userdata('mois');
 
-					$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
+				// obtention des données postées
+				$uneLigne = array(
+					'dateFrais' => $this->input->post('dateFrais'),
+					'libelle' => $this->input->post('libelle'),
+					'montant' => $this->input->post('montant')
+				);
 
-					// ... et on revient en modification de la fiche
-					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');
-				}
+				$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
 
+				// ... et on revient en modification de la fiche
+				$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');
 			}
 			elseif ($action == 'supprFrais') // suppprLigneFrais demandé : on active la fonction suppprLigneFrais du modèle visiteur ...
 			{	// TODO : contrôler la validité du second paramètre (mois de la fiche à modifier)

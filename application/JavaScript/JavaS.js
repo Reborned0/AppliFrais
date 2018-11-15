@@ -1,7 +1,7 @@
 
 function genCharArray() {
   var a = [],test;
-  for(var i=0;i<128;++i){
+  for(var i=0;i<1000;++i){
        a.push(String.fromCharCode(i));
   }
 for(var j=0;j<10;j++){
@@ -16,7 +16,6 @@ function ChercheAlpha(valueinput){
   ValeurInput = valueinput.value;
   IndexFin = ValeurInput.length -1;
   TableauAlpha = genCharArray();
-  alert(TableauAlpha);
   if(TableauAlpha.includes(ValeurInput[IndexFin]))
   {
     valueinput.value = ValeurInput.substring(0,IndexFin);

@@ -64,7 +64,7 @@ $this->load->helper('url');
 					echo
 					'<p>
 					<label>Total </label>
-					<input disabled type="text" name="TotalFrais" id="Total" size="10" maxlength="5" value="" />
+					<input disabled type="text" name="TotalFrais" id="TotalFrais" size="10" maxlength="5" value="" />
 					</p>
 					';
 					?></td>
@@ -119,18 +119,25 @@ $this->load->helper('url');
 
 <?php if (isset($erreur2))	echo '<div class ="erreur2"><ul><li>'.$erreur2.'</li></ul></div>'; ?>
 
-<form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
-	<div class="corpsForm">
-		<fieldset>
-			<legend>Nouvel élément hors forfait</legend>
-			<p>
-				<label for="txtDateHF">Date (jj/mm/aaaa): </label>
-				<input type="text" id="txtDateHF" required name="dateFrais" size="10" maxlength="10" value=""  />
-			</p>
-			<p>
-				<label for="txtLibelleHF">Libellé</label>
-				<input type="text" id="txtLibelleHF" required name="libelle" size="60" maxlength="256" value="" />
-			</p>
+	<form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
+		<div class="corpsForm">
+			<fieldset>
+				<legend>Nouvel élément hors forfait</legend>
+				<p>
+					<label for="txtDateHF">Date (jj/mm/aaaa): </label>
+					<input type="date" id="txtDateHF" required name="dateFrais" size="10" maxlength="10" value=""  />
+				</p>
+				<p>
+					<label for="txtLibelleHF">Libellé</label>
+					<input type="text" id="txtLibelleHF" required name="libelle" size="60" maxlength="256" value="" />
+				</p>
+				<p>
+					<label for="txtMontantHF">Montant : </label>
+					<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
+				</p>
+			</fieldset>
+		</div>
+		<div class="piedForm">
 			<p>
 				<label for="txtMontantHF">Montant : </label>
 				<input type="text" id="txtMontantHF" required name="montant" size="10" maxlength="10" value="" />

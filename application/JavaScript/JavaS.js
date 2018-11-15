@@ -35,15 +35,7 @@ function calculForfait() {
 }
 
 function calculTotalFrais(value1){
-  var valeurFrais, valeurQuant;
-  var total1 = 0, totalFr = 0;
-  valeurFrais = document.getElementsByClassName('SearchAlpha');
-  for(var i=0; i< valeurFrais.length;i++){
-    valeurQuant = parseInt(valeurFrais[i].value);
-    totalFr = valeurQuant * value1;
-    total1+= totalFr;
-    document.getElementsByClassName('1').value = "10";
-  }
 
-  document.getElementById('TotalFrais').value = total1;
+    document.getElementsByClassName('1').value = "10";
+
 }

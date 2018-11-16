@@ -1,7 +1,7 @@
 
 function genCharArray() {
   var a = [], num;
-  for(var i=0;i<1000;++i){
+  for(var i=0;i<10;++i){
        a.push(String.fromCharCode(i));
   }
 for(var j=0;j<=9;j++){
@@ -47,3 +47,12 @@ function calculTotalFrais(value1){
 
   document.getElementById('TotalFrais').value = total1;
 }
+function CalculFraisParFrais(valeurDuInput,){
+  var InputClass,ValeurUnFrais;
+  InputClass = valeurDuInput.id;
+  for(var i=0; i< unFrais.length;i++){
+    ValeurUnFrais = parseInt(unFrais[i].value);
+  }
+}
+//faire un tableau associatif de frais forfaits le recup en js puis le comparer
+//ex :tab[0] =ETP -> 110 puis le multiplier

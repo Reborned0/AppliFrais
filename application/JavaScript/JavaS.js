@@ -22,7 +22,6 @@ function ChercheAlpha(valueinput){
   }
 }
 
-
 function calculForfait() {
   var ValeurInputs,Input1;
   var total=0;
@@ -34,19 +33,6 @@ function calculForfait() {
   document.getElementById('Total').value = total;
 }
 
-function calculTotalFrais(value1){
-  var valeurFrais, valeurQuant;
-  var total1 = 0, totalFr = 0;
-  valeurFrais = document.getElementsByClassName('SearchAlpha');
-  for(var i=0; i< valeurFrais.length;i++){
-    valeurQuant = parseInt(valeurFrais[i].value);
-    totalFr = valeurQuant * value1;
-    total1+= totalFr;
-    document.getElementsByClassName('1').value = "10";
-  }
-
-  document.getElementById('TotalFrais').value = total1;
-}
 function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
    var InputClass,ValeurUnFrais,IndexFrais,ValeurdunInput,Resultat,StringIndex;
    InputClass = valeurDuInput.id;

@@ -60,8 +60,6 @@ function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
         Resultat =0;
       }
       document.getElementById('Resul'+Cléprim).value = Resultat;
-      console.log(Resultat);
-
     }
   }
 }

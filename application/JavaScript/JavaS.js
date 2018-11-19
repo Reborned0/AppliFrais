@@ -1,7 +1,7 @@
 
 function genCharArray() {
   var a = [], num;
-  for(var i=0;i<10;++i){
+  for(var i=0;i<10000;++i){
        a.push(String.fromCharCode(i));
   }
 for(var j=0;j<=9;j++){
@@ -47,11 +47,22 @@ function calculTotalFrais(value1){
 
   document.getElementById('TotalFrais').value = total1;
 }
-function CalculFraisParFrais(valeurDuInput,){
-  var InputClass,ValeurUnFrais;
-  InputClass = valeurDuInput.id;
-  for(var i=0; i< unFrais.length;i++){
-    ValeurUnFrais = parseInt(unFrais[i].value);
+function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
+   var InputClass,ValeurUnFrais,IndexFrais,ValeurdunInput,Resultat,StringIndex;
+   InputClass = valeurDuInput.id;
+   ValeurdunInput = valeurDuInput.value;
+
+  for(var Cléprim in leTableauDesFrais){
+    var valueTab = leTableauDesFrais[Cléprim];
+    if(Cléprim == InputClass){
+      Resultat = valueTab * ValeurdunInput;
+      if(Resultat== null){
+        Resultat =0;
+      }
+      document.getElementById('Resul'+Cléprim).value = Resultat;
+      console.log(Resultat);
+
+    }
   }
 }
 //faire un tableau associatif de frais forfaits le recup en js puis le comparer

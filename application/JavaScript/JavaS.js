@@ -27,7 +27,12 @@ function calculForfait() {
   var total=0;
   ValeurInputs = document.getElementsByClassName('SearchAlpha');
   for(var i=0; i< ValeurInputs.length;i++){
-    Input1 = parseInt(ValeurInputs[i].value);
+    if (ValeurInputs[i].value =="") {
+      Input1=0;
+    } else {
+      Input1 = parseInt(ValeurInputs[i].value);
+    }
+
     total+= Input1;
   }
   document.getElementById('Total').value = total;
@@ -49,5 +54,19 @@ function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
     }
   }
 }
-//faire un tableau associatif de frais forfaits le recup en js puis le comparer
-//ex :tab[0] =ETP -> 110 puis le multiplier
+
+function TotalFraisParFrais(){
+  var Total=0,NumberUnInput,ToutlesInputs;
+  ToutlesInputs = document.getElementsByClassName('ApplicationCalcul');
+  for (var i = 0; i < ToutlesInputs.length; i++) {
+    if (ToutlesInputs[i].value == "") {
+      NumberUnInput = 0;
+    } else {
+      NumberUnInput = parseInt(ToutlesInputs[i].value);
+    }
+
+    Total += NumberUnInput;
+
+  }
+  document.getElementById('TotalFrais').value = Total;
+}

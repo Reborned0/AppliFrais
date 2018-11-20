@@ -36,7 +36,7 @@ $this->load->helper('url');
 						echo
 						'<p>
 						<label for="'.$idFrais.'">'.$libelle.'</label>
-						<input type="text" onkeyup="ChercheAlpha(this);calculForfait();CalculFraisParFrais(this,TableaudesMontants);" onkeypress="ChercheAlpha(this);calculForfait();" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+						<input type="text" onkeyup="ChercheAlpha(this);calculForfait();CalculFraisParFrais(this,TableaudesMontants);TotalFraisParFrais();" onkeypress="ChercheAlpha(this);calculForfait();" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 						</p>
 						';
 						?></td><td><?php
@@ -46,7 +46,7 @@ $this->load->helper('url');
 						echo '
 						<p>
 						<label>Résultat </label>
-						<input disabled type="text" id="Resul'.$idFrais.'" size="10" maxlength="5" value="">
+						<input disabled type="text" class="ApplicationCalcul" id="Resul'.$idFrais.'" size="10" maxlength="5" value="">
 						';
 						$i++;
 						?></td>

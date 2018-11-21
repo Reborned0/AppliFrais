@@ -128,6 +128,7 @@ $this->load->helper('url');
 		<td class="date"></td>
 		<td class="libelle"><b>Montant Total</b></td>
 		<td class="montant"><b><?= $total ?></b></td>
+		<td class="action"><p> </p> </td>
 	</tr>
 </script>
 </table>
@@ -150,13 +151,6 @@ $this->load->helper('url');
 				<label for="txtMontantHF">Montant : </label>
 				<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
 			</p>
-		</fieldset>
-	</div>
-	<div class="piedForm">
-		<p>
-			<label for="txtMontantHF"> A VOIIIIIRRRRRRRRRRRRR : </label>
-			<input type="text" id="txtMontantHF" required name="montant" size="10" maxlength="10" value="" />
-		</p>
 	</fieldset>
 </div>
 <div class="piedForm">

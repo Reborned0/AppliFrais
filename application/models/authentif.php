@@ -10,18 +10,18 @@ class Authentif extends CI_Model {
 
 	 /**
 	 * Teste si un quelconque visiteur est connecté
-	 * 
-	 * @return vrai ou faux 
+	 *
+	 * @return vrai ou faux
 	 */
 	public function estConnecte()
 	{
 	  return $this->session->userdata('idUser');
 	}
-	
+
 	/**
 	 * Enregistre dans une variable session les infos d'un visiteur
-	 * 
-	 * @param $id 
+	 *
+	 * @param $id
 	 * @param $nom
 	 * @param $prenom
 	 */
@@ -47,22 +47,22 @@ class Authentif extends CI_Model {
                    'nom' => '',
                    'prenom' => ''
 				);
-	
+
 		$this->session->unset_userdata($authUser);
 		$this->session->sess_destroy();
 
 		$this->load->helper('url');
 		redirect('/c_default/');
 	}
-
+  
 	/**
 	 * Vérifie en base de données si les informations de connexions sont correctes
-	 * 
+	 *
 	 * @return : renvoie l'id, le nom et le prenom de l'utilisateur dans un tableau s'il est reconnu, sinon un tableau vide.
 	 */
-	public function authentifier ($login, $mdp) 
+	public function authentifier ($login, $mdp)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
-	
+
 		$this->load->model('dataAccess');
 
 		$authUser = $this->dataAccess->getInfosVisiteur($login, $mdp);

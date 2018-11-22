@@ -72,6 +72,7 @@ function CalculOnLoad(TableaudesMontants){
         document.getElementById('Resul'+Cléprim).value = Resultat;
       }
     }
+    TotalFraisParFrais();
   }
 }
 

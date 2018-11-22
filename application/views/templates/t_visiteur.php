@@ -20,7 +20,7 @@
 <script src="<?= base_url().'Application/JavaScript/JavaS.js'?>" type="text/javascript" ></script>
 	</head>
 
-	<body onload="setTimeout(hideNotify,7000);TotalFraisParFrais();calculForfait();CalculOnLoad(TableaudesMontants);">
+	<body onload="setTimeout(hideNotify,7000);calculForfait();CalculOnLoad(TableaudesMontants);">
 
 		<div id="page">
 			<div id="entete">

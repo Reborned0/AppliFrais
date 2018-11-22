@@ -27,7 +27,6 @@ $this->load->helper('url');
 
 								echo "<script type='text/javascript'>
 								TableaudesMontants['$idFrais']='$unFrais[montantFrais]';
-								console.log(TableaudesMontants);
 								</script>";
 
 							echo

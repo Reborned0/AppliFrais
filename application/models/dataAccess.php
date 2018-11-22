@@ -20,7 +20,7 @@ class DataAccess extends CI_Model {
 	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif
 	*/
 	public function getInfosVisiteur($login, $mdp){
-		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom
+		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom, visiteur.etat as etat
 				from visiteur
 				where visiteur.login=? and visiteur.mdp=?";
 		$rs = $this->db->query($req, array ($login, $mdp));
@@ -80,7 +80,7 @@ class DataAccess extends CI_Model {
 	 * @return l'id, le libelle et la quantité sous la forme d'un tableau associatif
 	*/
 	public function getLesLignesForfait($idVisiteur, $mois){
-		$req = "select fraisforfait.id as idfrais, fraisforfait.libelle as libelle,fraisforfait.montant as montantFrais, lignefraisforfait.quantite as quantite 
+		$req = "select fraisforfait.id as idfrais, fraisforfait.libelle as libelle,fraisforfait.montant as montantFrais, lignefraisforfait.quantite as quantite
 				from lignefraisforfait inner join fraisforfait
 					on fraisforfait.id = lignefraisforfait.idfraisforfait
 				where lignefraisforfait.idvisiteur ='$idVisiteur' and lignefraisforfait.mois='$mois'

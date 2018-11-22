@@ -33,6 +33,7 @@ class C_visiteur extends CI_Controller {
 			// même lorsqu'aucune action n'est exprimée
 			if ($action == 'index')				// index demandé : on active la fonction accueil du modèle visiteur
 			{
+
 				$this->load->model('a_visiteur');
 
 				// on n'est pas en mode "modification d'une fiche"

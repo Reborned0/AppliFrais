@@ -37,12 +37,6 @@ function calculForfait() {
   document.getElementById('Total').value = total;
 }
 
-<<<<<<< HEAD
-function calculTotalFrais(value1){
-
-  document.getElementsByClassName('1').value = "10";
-  document.getElementById('TotalFrais').value = "total1";
-=======
 function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
    var InputClass,ValeurUnFrais,IndexFrais,ValeurdunInput,Resultat,StringIndex;
    InputClass = valeurDuInput.id;
@@ -74,5 +68,4 @@ function TotalFraisParFrais(){
 
   }
   document.getElementById('TotalFrais').value = Total;
->>>>>>> 4640fcbe5b55e966d38d4731495bdcdd5d64e302
 }

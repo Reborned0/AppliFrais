@@ -10,8 +10,11 @@ $this->load->helper('url');
 		<div class="corpsForm">
 
 			<fieldset>
-				<legend>Eléments forfaitisés2</legend>
+				<legend>Eléments forfaitisés</legend>
 				<table style="text-align: left; width : 90%; ">
+					<script type='text/javascript'>
+					var TableaudesMontants = new Array;
+					</script>
 
 					<?php
 					$i = 0;
@@ -24,10 +27,16 @@ $this->load->helper('url');
 							$montantCoutFraisForfait = $unFrais['montantFrais'];
 							$quantite = $unFrais['quantite'];
 
+							echo "<script type='text/javascript'>
+							TableaudesMontants['$idFrais']='$unFrais[montantFrais]';
+							console.log(TableaudesMontants);
+							</script>";
+
+
 							echo
 							'<p>
 							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" onkeyup="ChercheAlpha(this);calculForfait();" onkeypress="ChercheAlpha(this);calculForfait();" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+							<input type="text" onkeyup="ChercheAlpha(this);calculForfait();CalculFraisParFrais(this,TableaudesMontants);TotalFraisParFrais();" onkeypress="ChercheAlpha(this);calculForfait();" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
 							</p>
 							';
 							?></td><td><?php
@@ -37,7 +46,7 @@ $this->load->helper('url');
 							echo '
 							<p>
 							<label>Résultat </label>
-							<input disabled type="text" class="'.$i.'" size="10" maxlength="5" value="">
+							<input disabled type="text" class="ApplicationCalcul" id="Resul'.$idFrais.'" size="10" maxlength="5" value="">
 							';
 							$i++;
 							?></td>
@@ -93,6 +102,7 @@ $this->load->helper('url');
 	</tr>
 
 	<?php
+	$total=0;
 	foreach( $lesFraisHorsForfait as $unFraisHorsForfait)
 	{
 		$libelle = $unFraisHorsForfait['libelle'];
@@ -111,44 +121,43 @@ $this->load->helper('url');
 		).
 		'</td>
 		</tr>';
+		$total+=$montant;
 	}
 	?>
-
+	<tr>
+		<td class="date"></td>
+		<td class="libelle"><b>Montant Total</b></td>
+		<td class="montant"><b><?= $total ?></b></td>
+		<td class="action"><p> </p> </td>
+	</tr>
 </script>
 </table>
 
 <?php if (isset($erreur2))	echo '<div class ="erreur2"><ul><li>'.$erreur2.'</li></ul></div>'; ?>
 
-	<form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
-		<div class="corpsForm">
-			<fieldset>
-				<legend>Nouvel élément hors forfait</legend>
-				<p>
-					<label for="txtDateHF">Date (jj/mm/aaaa): </label>
-					<input type="date" id="txtDateHF" required name="dateFrais" size="10" maxlength="10" value=""  />
-				</p>
-				<p>
-					<label for="txtLibelleHF">Libellé</label>
-					<input type="text" id="txtLibelleHF" required name="libelle" size="60" maxlength="256" value="" />
-				</p>
-				<p>
-					<label for="txtMontantHF">Montant : </label>
-					<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
-				</p>
-			</fieldset>
-		</div>
-		<div class="piedForm">
+<form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
+	<div class="corpsForm">
+		<fieldset>
+			<legend>Nouvel élément hors forfait</legend>
+			<p>
+				<label for="txtDateHF">Date (jj/mm/aaaa): </label>
+				<input type="date" id="txtDateHF" required name="dateFrais" size="10" maxlength="10" value=""  />
+			</p>
+			<p>
+				<label for="txtLibelleHF">Libellé</label>
+				<input type="text" id="txtLibelleHF" required name="libelle" size="60" maxlength="256" value="" />
+			</p>
 			<p>
 				<label for="txtMontantHF">Montant : </label>
-				<input type="text" id="txtMontantHF" required name="montant" size="10" maxlength="10" value="" />
+				<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
 			</p>
-		</fieldset>
-	</div>
-	<div class="piedForm">
-		<p>
-			<input id="ajouter" type="submit" value="Ajouter" size="20" />
-			<input id="effacer" type="reset" value="Effacer" size="20" />
-		</p>
-	</div>
+	</fieldset>
+</div>
+<div class="piedForm">
+	<p>
+		<input id="ajouter" type="submit" value="Ajouter" size="20" />
+		<input id="effacer" type="reset" value="Effacer" size="20" />
+	</p>
+</div>
 </form>
 </div>

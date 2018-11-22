@@ -1,6 +1,6 @@
 function genCharArray() {
   var a = [], num;
-  for(var i=0;i<1000;++i){
+  for(var i=0;i<10000;++i){
        a.push(String.fromCharCode(i));
   }
 for(var j=0;j<=9;j++){
@@ -21,20 +21,58 @@ function ChercheAlpha(valueinput){
   }
 }
 
-
 function calculForfait() {
   var ValeurInputs,Input1;
   var total=0;
   ValeurInputs = document.getElementsByClassName('SearchAlpha');
   for(var i=0; i< ValeurInputs.length;i++){
-    Input1 = parseInt(ValeurInputs[i].value);
+    if (ValeurInputs[i].value =="") {
+      Input1=0;
+    } else {
+      Input1 = parseInt(ValeurInputs[i].value);
+    }
+
     total+= Input1;
   }
   document.getElementById('Total').value = total;
 }
 
+<<<<<<< HEAD
 function calculTotalFrais(value1){
 
   document.getElementsByClassName('1').value = "10";
   document.getElementById('TotalFrais').value = "total1";
+=======
+function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
+   var InputClass,ValeurUnFrais,IndexFrais,ValeurdunInput,Resultat,StringIndex;
+   InputClass = valeurDuInput.id;
+   ValeurdunInput = valeurDuInput.value;
+
+  for(var Cléprim in leTableauDesFrais){
+    var valueTab = leTableauDesFrais[Cléprim];
+    if(Cléprim == InputClass){
+      Resultat = valueTab * ValeurdunInput;
+      if(Resultat== null){
+        Resultat =0;
+      }
+      document.getElementById('Resul'+Cléprim).value = Resultat;
+    }
+  }
+}
+
+function TotalFraisParFrais(){
+  var Total=0,NumberUnInput,ToutlesInputs;
+  ToutlesInputs = document.getElementsByClassName('ApplicationCalcul');
+  for (var i = 0; i < ToutlesInputs.length; i++) {
+    if (ToutlesInputs[i].value == "") {
+      NumberUnInput = 0;
+    } else {
+      NumberUnInput = parseInt(ToutlesInputs[i].value);
+    }
+
+    Total += NumberUnInput;
+
+  }
+  document.getElementById('TotalFrais').value = Total;
+>>>>>>> 4640fcbe5b55e966d38d4731495bdcdd5d64e302
 }

@@ -1,4 +1,3 @@
-
 function genCharArray() {
   var a = [], num;
   for(var i=0;i<10000;++i){

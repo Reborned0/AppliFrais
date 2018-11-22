@@ -34,7 +34,14 @@ class A_visiteur extends CI_Model {
 			if(!$this->dataAccess->ExisteFiche($idVisiteur, $unMois)) $this->dataAccess->creeFiche($idVisiteur, $unMois);
 		}
 		// envoie de la vue accueil du visiteur
-		$this->templates->load('t_visiteur', 'v_visAccueil');
+    if($this->session->userdata('etat') == "visiteur"){
+      $data['type'] = "visiteur";
+    }
+    else{
+      $data['type'] = "comptable";
+    }
+    
+		$this->templates->load('t_visiteur', 'v_visAccueil', $data);
 	}
 
 	/**

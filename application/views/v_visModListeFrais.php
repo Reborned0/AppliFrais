@@ -1,4 +1,4 @@
-<php
+<?php
 $this->load->helper('url');
 ?>
 <div id="contenu">
@@ -127,11 +127,12 @@ $this->load->helper('url');
 		<td class="date"></td>
 		<td class="libelle"><b>Montant Total</b></td>
 		<td class="montant"><b><?= $total ?></b></td>
+		<td class="action"><p> </p> </td>
 	</tr>
 </script>
 </table>
 
-<?php if (isset($erreur2))	echo '<div class ="erreur2"><ul><li>'.$erreur2.'</li></ul></div>'; ?>
+<?php if (isset($erreur2))	echo '<div class ="erreur"><ul><li>'.$erreur2.'</li></ul></div>'; ?>
 
 <form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
 	<div class="corpsForm">
@@ -149,13 +150,6 @@ $this->load->helper('url');
 				<label for="txtMontantHF">Montant : </label>
 				<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
 			</p>
-		</fieldset>
-	</div>
-	<div class="piedForm">
-		<p>
-			<label for="txtMontantHF"> A VOIIIIIRRRRRRRRRRRRR : </label>
-			<input type="text" id="txtMontantHF" required name="montant" size="10" maxlength="10" value="" />
-		</p>
 	</fieldset>
 </div>
 <div class="piedForm">

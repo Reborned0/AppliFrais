@@ -11,8 +11,8 @@ $this->load->helper('url');
 			<fieldset>
 				<legend>Eléments forfaitisés</legend>
 				<table style="text-align: left; width : 90%; ">
-					<script type='text/javascript'>
-					var TableaudesMontants = new Array;
+					<script type="text/javascript">
+					var TableaudesMontants = new Array();
 					</script>
 
 					<?php
@@ -23,14 +23,12 @@ $this->load->helper('url');
 							<td><?php
 							$idFrais = $unFrais['idfrais'];
 							$libelle = $unFrais['libelle'];
-							$montantCoutFraisForfait = $unFrais['montantFrais'];
 							$quantite = $unFrais['quantite'];
 
-							echo "<script type='text/javascript'>
-							TableaudesMontants['$idFrais']='$unFrais[montantFrais]';
-							console.log(TableaudesMontants);
-							</script>";
-
+								echo "<script type='text/javascript'>
+								TableaudesMontants['$idFrais']='$unFrais[montantFrais]';
+								console.log(TableaudesMontants);
+								</script>";
 
 							echo
 							'<p>
@@ -39,8 +37,6 @@ $this->load->helper('url');
 							</p>
 							';
 							?></td><td><?php
-
-							$resultCouts = $quantite * $montantCoutFraisForfait;
 
 							echo '
 							<p>

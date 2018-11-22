@@ -1,12 +1,12 @@
 function genCharArray() {
   var a = [], num;
   for(var i=0;i<10000;++i){
-       a.push(String.fromCharCode(i));
+    a.push(String.fromCharCode(i));
   }
-for(var j=0;j<=9;j++){
-  num = a.indexOf(j.toString());
-  a.splice(num,1);
-}
+  for(var j=0;j<=9;j++){
+    num = a.indexOf(j.toString());
+    a.splice(num,1);
+  }
   return a;
 }
 function ChercheAlpha(valueinput){
@@ -38,9 +38,9 @@ function calculForfait() {
 }
 
 function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
-   var InputClass,ValeurUnFrais,IndexFrais,ValeurdunInput,Resultat,StringIndex;
-   InputClass = valeurDuInput.id;
-   ValeurdunInput = valeurDuInput.value;
+  var InputClass,ValeurUnFrais,IndexFrais,ValeurdunInput,Resultat,StringIndex;
+  InputClass = valeurDuInput.id;
+  ValeurdunInput=valeurDuInput.value;
 
   for(var Cléprim in leTableauDesFrais){
     var valueTab = leTableauDesFrais[Cléprim];
@@ -50,6 +50,27 @@ function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
         Resultat =0;
       }
       document.getElementById('Resul'+Cléprim).value = Resultat;
+    }
+  }
+}
+
+function CalculOnLoad(TableaudesMontants){
+  var ValeurInputs,ClassInput,ValUnInput,Resultat;
+  ValeurInputs = document.getElementsByClassName('SearchAlpha');
+  for(var i=0;i< ValeurInputs.length;i++)
+  {
+    ValUnInput =ValeurInputs[i].value;
+    ClassInput = ValeurInputs[i].id;
+
+    for(var Cléprim in TableaudesMontants){
+      var valueTab = TableaudesMontants[Cléprim];
+      if(Cléprim == ClassInput){
+        Resultat = valueTab * ValUnInput;
+        if(Resultat == null){
+          Resultat =0;
+        }
+        document.getElementById('Resul'+Cléprim).value = Resultat;
+      }
     }
   }
 }

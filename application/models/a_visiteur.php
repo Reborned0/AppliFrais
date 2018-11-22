@@ -58,6 +58,7 @@ class A_visiteur extends CI_Model {
 
 		$data['notify'] = $message;
 		$data['mesFiches'] = $this->dataAccess->getFiches($idVisiteur);
+    $data['lesCoutsForfait'] = $this->dataAccess->getLesFraisForfait();
 		$this->templates->load('t_visiteur', 'v_visMesFiches', $data);
 	}
 

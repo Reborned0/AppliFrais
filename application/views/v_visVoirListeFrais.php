@@ -49,14 +49,14 @@
 				'<tr>
 					<td class="date">'.$date.'</td>
 					<td class="libelle">'.$libelle.'</td>
-					<td class="montant">'.$montant.'</td>'/*
+					<td class="montant">'.$montant.'</td>
 					<td class="action">'.
 					anchor(	"c_visiteur/supprFrais/$id",
 							"Supprimer ce frais",
 							'title="Suppression d\'une ligne de frais" onclick="return confirm(\'Voulez-vous vraiment supprimer ce frais ?\');"'
 						).
-					'</td>*/
-				.'</tr>';
+					'</td>
+				.</tr>';
 			}
 		?>
 

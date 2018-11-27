@@ -143,7 +143,7 @@ $this->load->helper('url');
 			</p>
 			<p>
 				<label for="txtMontantHF">Montant : </label>
-				<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
+				<input type="number" id="txtMontantHF" required name="montant" size="10" maxlength="10" value="" />
 			</p>
 	</fieldset>
 </div>

@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `fichefrais` (
   `dateModif` date DEFAULT NULL,
   `idEtat` char(2) DEFAULT 'CR',
   PRIMARY KEY (`idVisiteur`,`mois`),
-  FOREIGN KEY (`idEtat`) REFERENCES Etat(`id`),
-  FOREIGN KEY (`idVisiteur`) REFERENCES Visiteur(`id`)
+  FOREIGN KEY (`idEtat`) REFERENCES etat(`id`),
+  FOREIGN KEY (`idVisiteur`) REFERENCES visiteur(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -93,8 +93,8 @@ CREATE TABLE IF NOT EXISTS `lignefraisforfait` (
   `quantite` int(11) DEFAULT NULL,
   `montantApplique` decimal(5,2) NOT NULL,
   PRIMARY KEY (`idVisiteur`,`mois`,`idFraisForfait`),
-  FOREIGN KEY (`idVisiteur`, `mois`) REFERENCES FicheFrais(`idVisiteur`, `mois`),
-  FOREIGN KEY (`idFraisForfait`) REFERENCES FraisForfait(`id`)
+  FOREIGN KEY (`idVisiteur`, `mois`) REFERENCES fichefrais(`idVisiteur`, `mois`),
+  FOREIGN KEY (`idFraisForfait`) REFERENCES fraisforfait(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `lignefraishorsforfait` (
   `date` date DEFAULT NULL,
   `montant` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`idVisiteur`, `mois`) REFERENCES FicheFrais(`idVisiteur`, `mois`)
+  FOREIGN KEY (`idVisiteur`, `mois`) REFERENCES fichefrais(`idVisiteur`, `mois`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

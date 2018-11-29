@@ -124,7 +124,6 @@ $this->load->helper('url');
 		<td class="montant"><b><?= $total ?></b></td>
 		<td class="action"><p> </p> </td>
 	</tr>
-</script>
 </table>
 
 <?php if (isset($erreur2))	echo '<div class ="erreur"><ul><li>'.$erreur2.'</li></ul></div>'; ?>

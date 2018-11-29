@@ -2,7 +2,7 @@
 -- Contenu de la table `FraisForfait`
 --
 
-INSERT INTO `FraisForfait` (`id`, `libelle`, `montant`) VALUES
+INSERT INTO `fraisforfait` (`id`, `libelle`, `montant`) VALUES
 ('ETP', 'Forfait Etape', 110.00),
 ('KM', 'Frais Kilométrique', 0.62),
 ('NUI', 'Nuitée Hôtel', 80.00),
@@ -15,7 +15,7 @@ INSERT INTO `FraisForfait` (`id`, `libelle`, `montant`) VALUES
 -- Contenu de la table `Etat`
 --
 
-INSERT INTO `Etat` (`id`, `libelle`) VALUES
+INSERT INTO `etat` (`id`, `libelle`) VALUES
 ('RB', 'Remboursée'),
 ('CL', 'Fiche Signée, saisie clôturée'),
 ('CR', 'Fiche créée, saisie en cours'),

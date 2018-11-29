@@ -1,0 +1,8 @@
+-Redirection comptable ou visiteur via son controleur
+-Accueil : Affiche si visiteur ou comptable
+-Suppression de colonne action pour rembourser + fusion quand cloturer
+-Afficher une fiche de frais : impossible d'écrire dedans +ajout des résultats et totaux
+-Modification d'une fiche de frais : Ajout des calculs des totaux et resultats pour chaque hors forfais / forfaitisés (javascript)
+          Impossible d'ajouter une date invalide. Obligation de remplir tout les champs
+          Impossible de mettre des caracteres dans les cases (javascript)
+-Base de données : Ajout d'une colonne typePersonne pour differencier les visiteurs des comptables

@@ -158,4 +158,16 @@ class A_visiteur extends CI_Model {
 
 	    $this->dataAccess->supprimerLigneHorsForfait($idLigneFrais);
 	}
+
+  public function impressionFrais($idVisiteur,$mois, $message=null){
+
+    $data['notify'] = $message;
+    $data['numAnnee'] = substr( $mois,0,4);
+    $data['numMois'] = substr( $mois,4,2);
+    $data['lesFraisHorsForfait'] = $this->dataAccess->getLesLignesHorsForfait($idVisiteur,$mois);
+    $data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idVisiteur,$mois);
+    $data['lesCoutsForfait'] = $this->dataAccess->getLesFraisForfait();
+
+    $this->templates->load('t_visiteur', 'v_visImpressionFicheFrais', $data);
+  }
 }

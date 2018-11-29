@@ -34,7 +34,7 @@ function calculForfait() {
 
     total+= Input1;
   }
-  document.getElementById('Total').value = total.toFixed(2);
+  document.getElementById('Total').value = total;
 }
 
 function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){

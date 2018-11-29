@@ -39,7 +39,7 @@
 					</tr>';
 				}
 				elseif ($uneFiche['id'] == 'CL') {
-
+					$modLink= anchor('c_visiteur/imprimeFiche/'.$uneFiche['mois'], 'Impression', 'Imprimer une fiche de frais');
 					echo
 					'<tr>
 						<td class="date">'.anchor('c_visiteur/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>

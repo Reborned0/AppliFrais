@@ -159,6 +159,19 @@ class C_visiteur extends CI_Controller {
 				// ... et on revient en modification de la fiche
 				$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" supprimée ...');
 			}
+			elseif ($action== 'imprimeFiche') {
+				$this->load->model('a_visiteur');
+				// obtention du mois de la fiche à modifier qui doit avoir été transmis
+				// en second paramètre
+				$mois = $params[0];
+				// mémorisation du mode modification en cours
+				// on mémorise le mois de la fiche en cours de modification
+				$this->session->set_userdata('mois', $mois);
+				$idVisiteur= $this->session->userdata('idUser');
+
+				$this->a_visiteur->impressionFrais($idVisiteur,$mois);
+
+			}
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
 			{
 				show_404();

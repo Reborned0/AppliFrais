@@ -9,6 +9,7 @@
 	<table class="listeLegere">
 		<thead>
 			<tr>
+        <th> IdVisiteur </th>
 				<th >Mois</th>
 				<th >Etat</th>
 				<th >Montant</th>
@@ -18,23 +19,19 @@
 		<tbody>
 
 		<?php
-			foreach( $mesFiches as $uneFiche)
+			foreach($mesFiches as $uneFiche)
 			{
-				$modLink = '';
-				$signeLink = '';
 
-				if ($uneFiche['id'] == 'CR') {
-					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
-					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
-				}
-
-				echo
+        if($uneFiche['id'] == "CL"){
+				echo//MODIFIER ICI
 				'<tr>
+          <td class="libelle">'.$uneFiche['idVisiteur'].'</td>
 					<td class="date">'.anchor('c_visiteur/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
 					<td class="libelle">'.$uneFiche['libelle'].'</td>
 					<td class="montant">'.$uneFiche['montantValide'].'</td>
 					<td class="date">'.$uneFiche['dateModif'].'</td>
 				</tr>';
+      }
 			}
 		?>
 		</tbody>

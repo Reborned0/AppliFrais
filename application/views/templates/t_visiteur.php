@@ -39,11 +39,13 @@
 						<?php
 						if($this->session->userdata('etat') == "visiteur"){
 							$typepersonne = "c_visiteur";
+							$textefrais = "Mes fiches de frais";
 								echo "Visiteur :<br/>";
 						}
 
 					else{
 						$typepersonne = "c_comptable";
+						$textefrais = "Validation fiches de frais";
 						echo "Comptable :<br/>";
 					}
 						 echo $this->session->userdata('prenom')."  ".$this->session->userdata('nom');  ?>
@@ -53,7 +55,7 @@
 						<?php echo anchor($typepersonne.'/', 'Accueil', 'title="Page d\'accueil"'); ?>
 					</li>
 					<li class="smenu">
-						<?php echo anchor($typepersonne.'/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"'); ?>
+						<?php echo anchor($typepersonne.'/mesFiches', $textefrais , 'title="Consultation de mes fiches de frais"'); ?>
 					</li>
 					<li class="smenu">
 						<?php echo anchor($typepersonne.'/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>

@@ -57,7 +57,7 @@ class A_comptable extends CI_Model {
 		$idVisiteur = $this->session->userdata('idUser');
 
 		$data['notify'] = $message;
-		$data['mesFiches'] = $this->dataAccess->getFiches($idVisiteur);
+		$data['mesFiches'] = $this->dataAccess->getAllFiches($idVisiteur);
     $data['lesCoutsForfait'] = $this->dataAccess->getLesFraisForfait();
 		$this->templates->load('t_visiteur', 'v_comptFiches', $data);
 	}

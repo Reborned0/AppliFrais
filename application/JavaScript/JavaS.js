@@ -83,11 +83,11 @@ function TotalFraisParFrais(){
     if (ToutlesInputs[i].value == "") {
       NumberUnInput = 0;
     } else {
-      NumberUnInput = parseInt(ToutlesInputs[i].value);
+      NumberUnInput = parseFloat(ToutlesInputs[i].value);
     }
 
     Total += NumberUnInput;
 
   }
-  document.getElementById('TotalFrais').value = Total;
+  document.getElementById('TotalFrais').value = Total.toFixed(2);
 }

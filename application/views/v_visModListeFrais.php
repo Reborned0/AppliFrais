@@ -101,7 +101,7 @@ $this->load->helper('url');
 		'<tr>
 		<td class="date">'.$date.'</td>
 		<td class="libelle">'.$libelle.'</td>
-		<td class="montant">'.$montant.'</td>
+		<td class="montant">'.$montant.' €</td>
 		<td class="action">'.
 		anchor(	"c_visiteur/supprFrais/$id",
 		"Supprimer ce frais",
@@ -115,7 +115,7 @@ $this->load->helper('url');
 	<tr>
 		<td class="date"></td>
 		<td class="libelle"><b>Montant Total</b></td>
-		<td class="montant"><b><?= $total ?></b></td>
+		<td class="montant"><b><?= number_format($total,2)." €" ?></b></td>
 		<td class="action"><p> </p> </td>
 	</tr>
 </table>

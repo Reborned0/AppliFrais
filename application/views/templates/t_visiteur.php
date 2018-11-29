@@ -50,13 +50,13 @@
 
 					</li>
 					<li class="smenu">
-						<?php echo anchor($type.'/', 'Accueil', 'title="Page d\'accueil"'); ?>
+						<?php echo anchor($typepersonne.'/', 'Accueil', 'title="Page d\'accueil"'); ?>
 					</li>
 					<li class="smenu">
-						<?php echo anchor($type.'/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"'); ?>
+						<?php echo anchor($typepersonne.'/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"'); ?>
 					</li>
 					<li class="smenu">
-						<?php echo anchor($type.'/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>
+						<?php echo anchor($typepersonne.'/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>
 					</li>
 				</ul>
 

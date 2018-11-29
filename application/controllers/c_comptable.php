@@ -3,7 +3,7 @@
 /**
  * Contrôleur du module VISITEUR de l'application
 */
-class C_visiteur extends CI_Controller {
+class C_comptable extends CI_Controller {
 
 	/**
 	 * Aiguillage des demandes faites au contrôleur

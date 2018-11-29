@@ -1,5 +1,5 @@
 <div id="contenu">
-	<h2>Gestion des fraisFSDD des
+	<h2>Gestion des frais des
 		<?= $type."s"?>
 	</h2>
 	<p> Bienvenue dans votre application de gestion des frais de déplacements. </p>

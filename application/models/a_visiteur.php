@@ -168,6 +168,6 @@ class A_visiteur extends CI_Model {
     $data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idVisiteur,$mois);
     $data['lesCoutsForfait'] = $this->dataAccess->getLesFraisForfait();
 
-    $this->templates->load('t_visiteur', 'v_visImpressionFicheFrais', $data);
+    $this->templates->load('t_visiteur', 'v_visImpressiondFicheFrais', $data);
   }
 }

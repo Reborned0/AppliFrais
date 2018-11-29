@@ -39,6 +39,7 @@
 					</tr>';
 				}
 				elseif ($uneFiche['id'] == 'CL') {
+
 					echo
 					'<tr>
 						<td class="date">'.anchor('c_visiteur/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>

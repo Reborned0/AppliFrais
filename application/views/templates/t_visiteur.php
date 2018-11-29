@@ -38,23 +38,25 @@
 					<li>
 						<?php
 						if($this->session->userdata('etat') == "visiteur"){
+							$typepersonne = "c_visiteur";
 								echo "Visiteur :<br/>";
 						}
 
 					else{
+						$typepersonne = "c_comptable";
 						echo "Comptable :<br/>";
 					}
 						 echo $this->session->userdata('prenom')."  ".$this->session->userdata('nom');  ?>
 
 					</li>
 					<li class="smenu">
-						<?php echo anchor('c_visiteur/', 'Accueil', 'title="Page d\'accueil"'); ?>
+						<?php echo anchor($type.'/', 'Accueil', 'title="Page d\'accueil"'); ?>
 					</li>
 					<li class="smenu">
-						<?php echo anchor('c_visiteur/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"'); ?>
+						<?php echo anchor($type.'/mesFiches', 'Mes fiches de frais', 'title="Consultation de mes fiches de frais"'); ?>
 					</li>
 					<li class="smenu">
-						<?php echo anchor('c_visiteur/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>
+						<?php echo anchor($type.'/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>
 					</li>
 				</ul>
 

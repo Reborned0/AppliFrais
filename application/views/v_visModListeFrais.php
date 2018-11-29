@@ -47,12 +47,6 @@ $this->load->helper('url');
 						</tr><?php
 
 					}
-
-					//foreach ($lesFraisForfait as $res) {
-
-					//$result = $res['quantite'] * $res[''];
-					//echo "Résultat : ".$result;
-					//}
 					?><tr>
 						<td><?php
 						echo

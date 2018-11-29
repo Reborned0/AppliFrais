@@ -9,6 +9,7 @@ function genCharArray() {
   }
   return a;
 }
+
 function ChercheAlpha(valueinput){
   var ValeurInput, TableauAlpha, IndexFin, ValeurDebut, ValeurFin;
   ValeurInput = valueinput.value;
@@ -17,7 +18,6 @@ function ChercheAlpha(valueinput){
   if(TableauAlpha.includes(ValeurInput[IndexFin]))
   {
     valueinput.value = ValeurInput.substring(0,IndexFin);
-
   }
 }
 
@@ -34,7 +34,7 @@ function calculForfait() {
 
     total+= Input1;
   }
-  document.getElementById('Total').value = total;
+  document.getElementById('Total').value = total.toFixed(2);
 }
 
 function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){

@@ -49,7 +49,7 @@ function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
       if(Resultat== null){
         Resultat =0.00;
       }
-      document.getElementById('Resul'+Cléprim).value = parseFloat(Resultat.toFixed(2));
+      document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
     }
   }
 }
@@ -65,22 +65,22 @@ function CalculOnLoad(TableaudesMontants){
     for(var Cléprim in TableaudesMontants){
       var valueTab = TableaudesMontants[Cléprim];
       if(Cléprim == ClassInput){
-        Resultat = parseFloat(valueTab * ValUnInput);
+        Resultat = valueTab * ValUnInput;
         if(Resultat == null){
           Resultat =0;
         }
-        document.getElementById('Resul'+Cléprim).value = parseFloat(Resultat.toFixed(2));
+        document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
       }
     }
-    totalFraisParFrais();
+    TotalFraisParFrais();
   }
 }
 
-function totalFraisParFrais(){
+function TotalFraisParFrais(){
   var Total=0.00,NumberUnInput=0.00,ToutlesInputs;
   ToutlesInputs = document.getElementsByClassName('ApplicationCalcul');
   for (var i = 0; i < ToutlesInputs.length; i++) {
-    if (ToutlesInputs[i].value == "" | ToutlesInputs[i].value == null) {
+    if (ToutlesInputs[i].value == "") {
       NumberUnInput = 0;
     } else {
       NumberUnInput = parseFloat(ToutlesInputs[i].value);
@@ -88,7 +88,7 @@ function totalFraisParFrais(){
     Total += NumberUnInput;
 
   }
-  document.getElementById('unTotalFrais').value = Total.toFixed(2);
+  document.getElementById('TotalFrais').value = Total.toFixed(2);
 }
 
 function doPrint(){

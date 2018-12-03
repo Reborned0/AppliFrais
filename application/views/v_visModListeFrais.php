@@ -61,7 +61,7 @@ $this->load->helper('url');
 					echo
 					'<p>
 					<label>Total 2</label>
-					<input disabled type="text" name="unTotalFrais" id="TotalFrais" size="10" maxlength="5"/>
+					<input disabled type="text" name="TotalFrais" id="TotalFrais" size="10" maxlength="5"/>
 					</p>
 					';
 					?></td>

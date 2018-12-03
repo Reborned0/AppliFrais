@@ -10,6 +10,10 @@ $this->load->helper('url');
 
     <h2> Element(s) forfaitisé(s) </h2>
     <table class="listeLegere" style="align:center; width : 90%;">
+      <tr>
+        <th> Forfais </th>
+        <th> Montant </th>
+      </tr>
       <?php
       $montant=0;
       foreach ($lesFraisForfait as $unFrais) {
@@ -27,45 +31,50 @@ $this->load->helper('url');
       ?>
       <tr>
         <td>
-          Montant Global :
+          <b>
+            Montant Global :
+          </b>
         </td>
         <td style='text-align:right'>
-          <?= $montant." €" ?>
+          <b>
+            <?= $montant." €" ?>
+          </b>
         </td>
       </tr>
     </table>
+
     <h2> Element(s) hors forfais </h2>
     <table class="listeLegere">
       <tr>
-    		<th >Date</th>
-    		<th >Libellé</th>
-    		<th >Montant</th>
-    	</tr>
-    <?php $total2=0;
-    foreach( $lesFraisHorsForfait as $unFraisHorsForfait)
-    {
-      $libelle = $unFraisHorsForfait['libelle'];
-      $date = $unFraisHorsForfait['date'];
-      $montant=$unFraisHorsForfait['montant'];
-      $id = $unFraisHorsForfait['id'];
+        <th >Date</th>
+        <th >Libellé</th>
+        <th >Montant</th>
+      </tr>
+      <?php $total2=0;
+      foreach( $lesFraisHorsForfait as $unFraisHorsForfait)
+      {
+        $libelle = $unFraisHorsForfait['libelle'];
+        $date = $unFraisHorsForfait['date'];
+        $montant=$unFraisHorsForfait['montant'];
+        $id = $unFraisHorsForfait['id'];
 
-      echo
-  		'<tr>
-  		<td class="date">'.$date.'</td>
-  		<td class="libelle">'.$libelle.'</td>
-  		<td class="montant">'.$montant.' €</td>
+        echo
+        '<tr>
+        <td class="date">'.$date.'</td>
+        <td class="libelle">'.$libelle.'</td>
+        <td class="montant">'.$montant.' €</td>
 
-  		</tr>';
-  		$total2+=$montant;
-  	}
-  	?>
-  	<tr>
-  		<td class="date"></td>
-  		<td class="libelle"><b>Montant Total</b></td>
-  		<td class="montant"><b><?= number_format($total2,2)." €" ?></b></td>
-  	</tr>
-  </table>
-  <output onload="Calcul()" name="result"></output>
+        </tr>';
+        $total2+=$montant;
+      }
+      ?>
+      <tr>
+        <td class="date"></td>
+        <td class="libelle"><b>Montant Total</b></td>
+        <td class="montant"><b><?= number_format($total2,2)." €" ?></b></td>
+      </tr>
+    </table>
+    <output onload="Calcul()" name="result"></output>
   </div>
   <div class="piedForm">
   </div>

@@ -38,7 +38,7 @@ $this->load->helper('url');
         </td>
         <td style='text-align:right'>
           <b>
-            <?= number_format($montantFraisForfait)." €" ?>
+            <?= number_format($montantFraisForfait,2)." €" ?>
           </b>
         </td>
       </tr>

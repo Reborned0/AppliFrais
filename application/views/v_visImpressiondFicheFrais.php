@@ -5,6 +5,7 @@ $this->load->helper('url');
   <h2>Imprimer ma fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?></h2>
   <?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
   <div class="corpsForm">
+    <!--startprint-->
     <h1 style="color:grey"><u><?= $this->session->userdata('prenom')."   ". $this->session->userdata('nom')." : " ?></u></h1>
 
 
@@ -15,7 +16,7 @@ $this->load->helper('url');
         <th> Montant </th>
       </tr>
       <?php
-      $montant=0;
+      $montantFraisForfait=0;
       foreach ($lesFraisForfait as $unFrais) {
         $idFrais = $unFrais['idfrais'];
         $libelle = $unFrais['libelle'];
@@ -24,8 +25,8 @@ $this->load->helper('url');
         echo "
         <tr>
         <td>
-        ".$libelle."</td><td style='text-align:right'> <span style='align:right;'> ".$montantFrais * $quantite." € </span></tr>";
-        $montant+= $montantFrais * $quantite;
+        ".$libelle."</td><td style='text-align:right'> <span style='align:right;'> ".number_format($montantFrais * $quantite,2)." € </span></tr>";
+        $montantFraisForfait+= $montantFrais * $quantite;
       }
 
       ?>
@@ -37,7 +38,7 @@ $this->load->helper('url');
         </td>
         <td style='text-align:right'>
           <b>
-            <?= $montant." €" ?>
+            <?= number_format($montantFraisForfait)." €" ?>
           </b>
         </td>
       </tr>
@@ -50,7 +51,8 @@ $this->load->helper('url');
         <th >Libellé</th>
         <th >Montant</th>
       </tr>
-      <?php $total2=0;
+      <?php
+      $MontantHorsForfait=0;
       foreach( $lesFraisHorsForfait as $unFraisHorsForfait)
       {
         $libelle = $unFraisHorsForfait['libelle'];
@@ -65,17 +67,20 @@ $this->load->helper('url');
         <td class="montant">'.$montant.' €</td>
 
         </tr>';
-        $total2+=$montant;
+        $MontantHorsForfait+=$montant;
       }
       ?>
       <tr>
         <td class="date"></td>
         <td class="libelle"><b>Montant Total</b></td>
-        <td class="montant"><b><?= number_format($total2,2)." €" ?></b></td>
+        <td class="montant"><b><?= number_format($MontantHorsForfait,2)." €" ?></b></td>
       </tr>
     </table>
-    <output onload="Calcul()" name="result"></output>
+
+    <h3 align="center"> <output name="result">Le montant total est de : <?= number_format($montantFraisForfait+$MontantHorsForfait,2)?> €</output> </h3>
   </div>
+  <!--endprint-->
   <div class="piedForm">
+    <input type="button" onclick="doPrint()" value="Imprimer" />
   </div>
 </div>

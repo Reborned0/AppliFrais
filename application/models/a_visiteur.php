@@ -22,7 +22,7 @@ class A_visiteur extends CI_Model {
 
 		// chargement du modèle contenant les fonctions génériques
 		$this->load->model('functionsLib');
-
+    
 		// obtention de la liste des 6 derniers mois (y compris celui ci)
 		$lesMois = $this->functionsLib->getSixDerniersMois();
 

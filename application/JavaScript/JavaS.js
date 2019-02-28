@@ -111,6 +111,7 @@ function afficher(){
 function cache(){
 	document.getElementById('bt1').style.display = 'inline';
 	document.getElementById('bt2').style.display = 'none';
+}
 
 function Expiration(DateFiche){
   DateDu

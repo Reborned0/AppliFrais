@@ -36,7 +36,7 @@
 						<td class="montant">'.$uneFiche['montantValide'].'</td>
 						<td class="date">'.$uneFiche['dateModif'].'</td>
 						<td class="action">'.$modLink.'</td>
-						<td onclick="Expiration('.$uneFiche['mois'].')" class="action">'.$signeLink.'</td>
+						<td onmouseover="Expiration('.$uneFiche['mois'].')" class="action">'.$signeLink.'</td>
 					</tr>';
 				}
 				elseif ($uneFiche['id'] == 'CL') {

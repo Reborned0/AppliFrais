@@ -113,7 +113,9 @@ function deverouille(){
 }
 
 function Expiration(DateFiche){
-  var AnneeDuJour = Date().getFullYear();
-  var DateDuJour = AnneeDuJour.toString() + (Date().getMonth() + 1).toString();
-  console.log(DateDuJour);
+  var FullDate = new Date();
+  var Annee = FullDate.getFullYear();
+  var Mois = ('0'+FullDate.getMonth()+1).slice(-2);
+  var DateDuJour = Annee.toString() + Mois;
+  alert(DateDuJour);
 }

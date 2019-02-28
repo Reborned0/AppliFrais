@@ -103,15 +103,16 @@ function doPrint(){
   window.document.body.innerHTML = bdhtml;
 }
 
-function afficher(){
-	document.getElementById('bt1').style.display = 'none';
-	document.getElementById('bt2').style.display = 'inline';
+function deverouille(){
+  var test = document.getElementsByClassName("SearchAlpha");
+  for (var i = 0; i < test.length; i++) {
+    test[i].disabled = false;
+  }
+  document.getElementById("validerModif").style.display = 'inline';
 }
 
-function cache(){
-	document.getElementById('bt1').style.display = 'inline';
-	document.getElementById('bt2').style.display = 'none';
-}
+
+function
 
 function Expiration(DateFiche){
   DateDu

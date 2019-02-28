@@ -49,6 +49,7 @@ function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
       if(Resultat== null){
         Resultat =0.00;
       }
+      console.log(Cléprim);
       document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
     }
   }
@@ -116,5 +117,5 @@ function cache(){
 function Expiration(DateFiche){
   var AnneeDuJour = Date().getFullYear();
   var DateDuJour = AnneeDuJour.toString() + (Date().getMonth() + 1).toString();
-  alert(DateDuJour);
+  console.log(DateDuJour);
 }

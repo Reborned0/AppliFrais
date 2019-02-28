@@ -102,3 +102,6 @@ function doPrint(){
   window.print();
   window.document.body.innerHTML = bdhtml;
 }
+function Expiration(DateFiche){
+  DateDu
+}

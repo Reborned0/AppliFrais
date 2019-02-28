@@ -114,5 +114,7 @@ function cache(){
 }
 
 function Expiration(DateFiche){
-  DateDu
+  var AnneeDuJour = Date().getFullYear();
+  var DateDuJour = AnneeDuJour.toString() + (Date().getMonth() + 1).toString();
+  alert(DateDuJour);
 }

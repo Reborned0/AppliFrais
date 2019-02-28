@@ -111,9 +111,6 @@ function deverouille(){
   document.getElementById("validerModif").style.display = 'inline';
 }
 
-
-function
-
 function Expiration(DateFiche){
   var AnneeDuJour = Date().getFullYear();
   var DateDuJour = AnneeDuJour.toString() + (Date().getMonth() + 1).toString();

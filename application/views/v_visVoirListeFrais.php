@@ -66,6 +66,10 @@ $this->load->helper('url');
 					';
 					?>
 				</td>
+				<td>
+					<button style="display: inline;" id="bt1" type="button" onclick="afficher()">Modifier</button>
+					<button style="display: none;" id="bt2" type="button" onclick="cache()">Modifier</button>
+				</td>
 			</tr>
 
 		</table>

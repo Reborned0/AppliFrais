@@ -56,6 +56,13 @@
 						<td class="montant">'.$uneFiche['montantValide'].'</td>
 						<td class="date">'.$uneFiche['dateModif'].'</td>
 					</tr>';
+				}elseif ($uneFiche['id'] == 'EX') {
+					echo '<tr>
+						<td class="date">'.anchor('c_visiteur/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
+						<td class="libelle">'.$uneFiche['libelle'].'</td>
+						<td class="montant">'.$uneFiche['montantValide'].'</td>
+						<td class="date">'.$uneFiche['dateModif'].'</td>
+					</tr>';
 				}
 
 

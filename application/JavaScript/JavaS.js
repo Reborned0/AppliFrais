@@ -103,7 +103,6 @@ function doPrint(){
   window.document.body.innerHTML = bdhtml;
 }
 
-
 function afficher(){
 	document.getElementById('bt1').style.display = 'none';
 	document.getElementById('bt2').style.display = 'inline';
@@ -115,5 +114,4 @@ function cache(){
 
 function Expiration(DateFiche){
   DateDu
-
 }

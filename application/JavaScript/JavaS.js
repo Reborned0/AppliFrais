@@ -115,7 +115,28 @@ function deverouille(){
 function Expiration(DateFiche){
   var FullDate = new Date();
   var Annee = FullDate.getFullYear();
-  var Mois = ('0'+FullDate.getMonth()+1).slice(-2);
-  var DateDuJour = Annee.toString() + Mois;
-  alert(DateDuJour);
+  var Mois = ('0'+(FullDate.getMonth()+1)).slice(-2);
+  var DateDuJour = Annee.toString()+"/" + Mois;
+
+  var DateAujour = new Date(DateDuJour);
+  DateFiche = Decomposition(DateFiche.toString());
+  var DateDeFiche = new Date(DateFiche.toString());
+  alert(DateDeFiche);
+  if ((DateDeFiche.getFullYear()+1) <= DateAujour) {
+      alert("Date inférieur  ou égal a 12 mois   "+ DateDeFiche +" ;;; " + DateAujour);
+  }else{
+    alert("Supérieur a 12mois " + DateDeFiche +" ;;; " + DateAujour);
+  }
+}
+
+function Decomposition(uneDateFiche){
+  var Chaine1,Chaine2;
+  if(uneDateFiche.length == 6)
+  {
+    Chaine1 = uneDateFiche.substr(0,4);
+    Chaine2 = uneDateFiche.substr(4,2);
+    uneDateFiche = Chaine1 +"/"+ Chaine2;
+    return uneDateFiche
+  }else
+    return null;
 }

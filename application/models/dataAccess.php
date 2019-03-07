@@ -264,7 +264,7 @@ class dataaccess extends CI_Model {
 	public function getLesInfosFicheFrais($idVisiteur,$mois){
 		$req = "select ficheFrais.idEtat as idEtat, ficheFrais.dateModif as dateModif,
 					ficheFrais.nbJustificatifs as nbJustificatifs, ficheFrais.montantValide as montantValide, etat.libelle as libEtat
-				from  fichefrais inner join Etat on ficheFrais.idEtat = Etat.id
+				from  fichefrais inner join Etat on ficheFrais.idEtat = etat.id
 				where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		$rs = $this->db->query($req);
 		$laLigne = $rs->first_row('array');
@@ -292,7 +292,7 @@ class dataaccess extends CI_Model {
 	*/
 	public function getFiches ($idVisiteur) {
 		$req = "select idVisiteur, mois, montantValide, dateModif, id, libelle
-				from  fichefrais inner join Etat on ficheFrais.idEtat = Etat.id
+				from  fichefrais inner join etat on ficheFrais.idEtat = etat.id
 				where fichefrais.idvisiteur = '$idVisiteur'
 				order by mois desc";
 		$rs = $this->db->query($req);
@@ -302,7 +302,7 @@ class dataaccess extends CI_Model {
 
   public function getAllFiches ($idVisiteur) {
     $req = "select idVisiteur, mois, montantValide, dateModif, libelle, id
-        from fichefrais inner join Etat on ficheFrais.idEtat = Etat.id
+        from fichefrais inner join etat on ficheFrais.idEtat = etat.id
         where fichefrais.idVisiteur != '$idVisiteur'
         order by idVisiteur, mois desc
         ";

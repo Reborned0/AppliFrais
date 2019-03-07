@@ -21,10 +21,10 @@ class A_visiteur extends CI_Model {
 	{	// TODO : Contrôler que toutes les valeurs de $unMois sont valides (chaine de caractère dans la BdD)
 
 		// chargement du modèle contenant les fonctions génériques
-		$this->load->model('functionsLib');
+		$this->load->model('functionslib');
     
 		// obtention de la liste des 6 derniers mois (y compris celui ci)
-		$lesMois = $this->functionsLib->getSixDerniersMois();
+		$lesMois = $this->functionslib->getSixDerniersMois();
 
 		// obtention de l'id de l'utilisateur mémorisé en session
 		$idVisiteur = $this->session->userdata('idUser');

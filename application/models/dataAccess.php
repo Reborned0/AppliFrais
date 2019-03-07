@@ -3,7 +3,7 @@
 /**
  * Modèle qui implémente les fonctions d'accès aux données
 */
-class DataAccess extends CI_Model {
+class dataaccess extends CI_Model {
 // TODO : Transformer toutes les requêtes en requêtes paramétrées
 
     function __construct()
@@ -39,7 +39,7 @@ class DataAccess extends CI_Model {
 	 * @return tous les champs des lignes de frais hors forfait sous la forme d'un tableau associatif
 	*/
 	public function getLesLignesHorsForfait($idVisiteur,$mois){
-		$this->load->model('functionsLib');
+		$this->load->model('functionslib');
 
 		$req = "select *
 				from lignefraishorsforfait
@@ -50,7 +50,7 @@ class DataAccess extends CI_Model {
 		$nbLignes = $rs->num_rows();
 		for ($i=0; $i<$nbLignes; $i++){
 			$date = $lesLignes[$i]['date'];
-			$lesLignes[$i]['date'] =  $this->functionsLib->dateAnglaisVersFrancais($date);
+			$lesLignes[$i]['date'] =  $this->functionslib->dateAnglaisVersFrancais($date);
 		}
 		return $lesLignes;
 	}
@@ -207,9 +207,9 @@ class DataAccess extends CI_Model {
 	 * @param $montant : le montant
 	*/
 	public function creeLigneHorsForfait($idVisiteur,$mois,$libelle,$date,$montant){
-		$this->load->model('functionsLib');
+		$this->load->model('functionslib');
 
-		$dateFr = $this->functionsLib->dateFrancaisVersAnglais($date);
+		$dateFr = $this->functionslib->dateFrancaisVersAnglais($date);
 		$req = "insert into lignefraishorsforfait
 				values('','$idVisiteur','$mois','$libelle','$dateFr','$montant')";
 		$this->db->simple_query($req);

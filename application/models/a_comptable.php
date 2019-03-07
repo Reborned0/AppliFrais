@@ -8,7 +8,7 @@ class A_comptable extends CI_Model {
         parent::__construct();
 
 		// chargement du modèle d'accès aux données qui est utile à toutes les méthodes
-		$this->load->model('dataAccess');
+		$this->load->model('dataaccess');
     }
 
 	/**
@@ -31,7 +31,7 @@ class A_comptable extends CI_Model {
 
 		// contrôle de l'existence des 6 dernières fiches et création si nécessaire
 		foreach ($lesMois as $unMois){
-			if(!$this->dataAccess->ExisteFiche($idVisiteur, $unMois)) $this->dataAccess->creeFiche($idVisiteur, $unMois);
+			if(!$this->dataaccess->ExisteFiche($idVisiteur, $unMois)) $this->dataaccess->creeFiche($idVisiteur, $unMois);
 		}
 		// envoie de la vue accueil du visiteur
     if($this->session->userdata('etat') == "visiteur"){
@@ -57,8 +57,8 @@ class A_comptable extends CI_Model {
 		$idVisiteur = $this->session->userdata('idUser');
 
 		$data['notify'] = $message;
-		$data['mesFiches'] = $this->dataAccess->getAllFiches($idVisiteur);
-    $data['lesCoutsForfait'] = $this->dataAccess->getLesFraisForfait();
+		$data['mesFiches'] = $this->dataaccess->getAllFiches($idVisiteur);
+    $data['lesCoutsForfait'] = $this->dataaccess->getLesFraisForfait();
 		$this->templates->load('t_visiteur', 'v_comptFiches', $data);
 	}
 
@@ -73,8 +73,8 @@ class A_comptable extends CI_Model {
 
 		$data['numAnnee'] = substr( $mois,0,4);
 		$data['numMois'] = substr( $mois,4,2);
-		$data['lesFraisHorsForfait'] = $this->dataAccess->getLesLignesHorsForfait($idVisiteur,$mois);
-		$data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idVisiteur,$mois);
+		$data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idVisiteur,$mois);
+		$data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idVisiteur,$mois);
 
 		$this->templates->load('t_visiteur', 'v_visVoirListeFrais', $data);
 	}
@@ -93,9 +93,9 @@ class A_comptable extends CI_Model {
 		$data['notify'] = $message;
 		$data['numAnnee'] = substr( $mois,0,4);
 		$data['numMois'] = substr( $mois,4,2);
-		$data['lesFraisHorsForfait'] = $this->dataAccess->getLesLignesHorsForfait($idVisiteur,$mois);
-		$data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idVisiteur,$mois);
-    $data['lesCoutsForfait'] = $this->dataAccess->getLesFraisForfait();
+		$data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idVisiteur,$mois);
+		$data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idVisiteur,$mois);
+    $data['lesCoutsForfait'] = $this->dataaccess->getLesFraisForfait();
 
 		$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
 	}
@@ -110,7 +110,7 @@ class A_comptable extends CI_Model {
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 		// TODO : intégrer une fonctionnalité d'impression PDF de la fiche
 
-	    $this->dataAccess->signeFiche($idVisiteur, $mois);
+	    $this->dataaccess->signeFiche($idVisiteur, $mois);
 	}
 
 	/**
@@ -124,8 +124,8 @@ class A_comptable extends CI_Model {
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 		// TODO : valider les données contenues dans $lesFrais ...
 
-		$this->dataAccess->majLignesForfait($idVisiteur,$mois,$lesFrais);
-		$this->dataAccess->recalculeMontantFiche($idVisiteur,$mois);
+		$this->dataaccess->majLignesForfait($idVisiteur,$mois,$lesFrais);
+		$this->dataaccess->recalculeMontantFiche($idVisiteur,$mois);
 	}
 
 	/**
@@ -143,7 +143,7 @@ class A_comptable extends CI_Model {
 		$libelle = $uneLigne['libelle'];
 		$montant = $uneLigne['montant'];
 
-		$this->dataAccess->creeLigneHorsForfait($idVisiteur,$mois,$libelle,$dateFrais,$montant);
+		$this->dataaccess->creeLigneHorsForfait($idVisiteur,$mois,$libelle,$dateFrais,$montant);
 	}
 
 	/**
@@ -156,6 +156,6 @@ class A_comptable extends CI_Model {
 	public function supprLigneFrais($idVisiteur, $mois, $idLigneFrais)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session et cohérents entre eux
 
-	    $this->dataAccess->supprimerLigneHorsForfait($idLigneFrais);
+	    $this->dataaccess->supprimerLigneHorsForfait($idLigneFrais);
 	}
 }

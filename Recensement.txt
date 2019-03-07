@@ -7,7 +7,7 @@
           Impossible de mettre des caracteres dans les cases (javascript)
 -Base de données : Ajout d'une colonne typePersonne pour differencier les visiteurs des comptables
 Ajout :
-  -(dataAccess)requête getAllfiches
+  -(dataaccess)requête getAllfiches
   -(a_comptable) insertion getAllFiches -> pour récupérer toutes les fiches de tous les visteurs
   -(t_visiteur) insertion $textefrais suivant si l'utilisateur est comptable ou visiteur
   -(v_comptFiches)ajustement des fonctions et affichage suivant toutes les fiches signées à valider

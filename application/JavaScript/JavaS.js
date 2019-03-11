@@ -113,30 +113,46 @@ function deverouille(){
 }
 
 function Expiration(DateFiche){
+  var AnneeFiche,MoisFiche,DateFiche2;
   var FullDate = new Date();
   var Annee = FullDate.getFullYear();
   var Mois = ('0'+(FullDate.getMonth()+1)).slice(-2);
   var DateDuJour = Annee.toString()+"/" + Mois;
-
   var DateAujour = new Date(DateDuJour);
-  DateFiche = Decomposition(DateFiche.toString());
-  var DateDeFiche = new Date(DateFiche.toString());
-  alert(DateDeFiche);
-  if ((DateDeFiche.getFullYear()+1) <= DateAujour) {
-      alert("Date inférieur  ou égal a 12 mois   "+ DateDeFiche +" ;;; " + DateAujour);
+
+
+
+  AnneeFiche = DecompositionAnnee(DateFiche.toString());
+  MoisFiche = DecompositionMois(DateFiche.toString());
+  DateFiche = AnneeFiche.toString() +'/'+MoisFiche;
+  DateFiche2 = (parseInt(AnneeFiche.toString())+1).toString()+'/'+MoisFiche;
+
+  var DateDeFiche1 = new Date(DateFiche.toString());
+  var DateDeFiche2 = new Date(DateFiche2.toString());
+
+  if (DateAujour >= DateDeFiche1 && DateAujour <= DateDeFiche2) {
+    alert("Fiche envoyé");
   }else{
-    alert("Supérieur a 12mois " + DateDeFiche +" ;;; " + DateAujour);
+    alert("Votre fiche a expirée");
   }
 }
 
-function Decomposition(uneDateFiche){
-  var Chaine1,Chaine2;
+function DecompositionAnnee(uneDateFiche){
+  var Chaine1;
   if(uneDateFiche.length == 6)
   {
     Chaine1 = uneDateFiche.substr(0,4);
+    return Chaine1
+  }else
+    return null;
+}
+
+function DecompositionMois(uneDateFiche){
+  var Chaine2;
+  if(uneDateFiche.length == 6)
+  {
     Chaine2 = uneDateFiche.substr(4,2);
-    uneDateFiche = Chaine1 +"/"+ Chaine2;
-    return uneDateFiche
+    return Chaine2
   }else
     return null;
 }

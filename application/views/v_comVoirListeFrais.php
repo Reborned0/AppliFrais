@@ -3,7 +3,7 @@ $this->load->helper('url');
 ?>
 
 <div id="contenu">
-  <h2>Renseigner la fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?> de  <?= $nomVisiteur." ".$prenomVisiteur ?></h2>
+  <h2>Renseigner la fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?> de <b><u><?= $nomVisiteur." ".$prenomVisiteur ?></u></b></h2>
 
 
   <div class="corpsForm">
@@ -14,7 +14,7 @@ $this->load->helper('url');
         <script type="text/javascript">
         var TableaudesMontants = new Array();
         </script>
-        <form method="post"  action="<?php echo base_url("c_comptable/majForfait?idVisi=".$_GET['idVisi']);?>"> <!-- je ne penses pas que ce soit le bon chemin pour changer dans la base de donnée (faire nouvelle fonction dans le c_comptable) -->
+        <form method="post"  action="<?php echo base_url("c_comptable").'/majMontantFrais/'.$this->session->userdata('mois')."?idVisi=".$_GET['idVisi'];?>"> <!-- je ne penses pas que ce soit le bon chemin pour changer dans la base de donnée (faire nouvelle fonction dans le c_comptable) -->
           <?php
           $i=0;
 
@@ -43,7 +43,7 @@ $this->load->helper('url');
             echo '
             <p>
             <label>Résultat </label>
-            <input disabled type="text" class="ApplicationCalcul" id="Resul'.$idFrais.'" size="10" maxlength="5" value="">
+            <input disabled type="text" class="ApplicationCalcul" id="Resul'.$idFrais.'" name="Resul['.$idFrais.']" size="10" maxlength="5" value="">
             ';
             $i++;
             ?></td>
@@ -70,10 +70,11 @@ $this->load->helper('url');
             ?>
           </td>
           <td>
-						<input style="display: none" type="submit" id="validerModif" name="validerModif" value="Enregistrer"></form>
-						<button onclick="deverouille(TableaudesMontants)" id="modifModif">Modifier</button>
-					</td>
-				</tr>
+            <input style="display: none" type="submit" id="validerModif" name="validerModif" value="Enregistrer">
+          </form>
+            <button onclick="deverouille(TableaudesMontants)" id="modifModif">Modifier</button>
+          </td>
+        </tr>
       </table>
     </fieldset>
     <p></p>
@@ -123,6 +124,6 @@ $this->load->helper('url');
     <form method="post"  action="<?php echo base_url("c_comptable/majForfait");?>">
       <input type="submit" id="validerFiche" name="validerFiche" value="Valider">
       <input type="submit" id="refuserFiche" name="refuserFiche" value="Refuser">
-  </div>
+    </div>
 
-</div>
+  </div>

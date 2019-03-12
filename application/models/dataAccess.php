@@ -383,6 +383,19 @@ class dataaccess extends CI_Model {
   return $ligne;
   }
 
+  public function setMajMontantFrais($idVisiteur, $mois, $lesFrais){
+
+    foreach ($lesFrais as $key => $value) {
+      $data = array('montantApplique' => $value);
+      $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois, 'idFraisForfait' => $key);
+      $this->db->update('lignefraisforfait', $data, $where);
+    }
+    // $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
+
+    // $this->db->update('lignefraisforfait', $data, $where);
+
+  }
+
   public function DecompositionMois($uneDateFiche){
     if (strlen($uneDateFiche) == 6) {
       $Chaine = substr($uneDateFiche,4,2);

@@ -14,7 +14,11 @@
 
 		<script type="text/javascript">
 			function hideNotify() {
-				document.getElementById("notify").style.display = "none";
+				try {
+						document.getElementById("notify").style.display = "none";
+				} catch (e) {
+					console.log(e);
+				}
 			}
 		</script>
 <script src="<?= base_url().'Application/JavaScript/JavaS.js'?>" type="text/javascript" ></script>

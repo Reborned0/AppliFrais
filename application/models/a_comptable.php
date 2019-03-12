@@ -99,8 +99,11 @@ class A_comptable extends CI_Model {
 		$data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idVisiteur,$mois);
 		$data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idVisiteur,$mois);
     $data['lesCoutsForfait'] = $this->dataaccess->getLesFraisForfait();
+    $resultat = $this->dataaccess->getInfoVisiteur($_GET['idVisi']);
+    $data['nomVisiteur'] = $resultat['nom'];
+    $data['prenomVisiteur'] = $resultat['prenom'];
 
-		$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
+		$this->templates->load('t_visiteur', 'v_comVoirListeFrais', $data);
 	}
 
 	/**
@@ -166,8 +169,8 @@ class A_comptable extends CI_Model {
 
 	    $this->dataaccess->supprimerLigneHorsForfait($idLigneFrais);
 	}
-  public function infoVisiteur($idVisiteur)
+  public function majMontantFrais($idVisiteur,$mois,$lesFrais)
   {
-
+    $this->dataaccess->setMajMontantFrais($idVisiteur,$mois,$lesFrais);
   }
 }

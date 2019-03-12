@@ -4,7 +4,7 @@
 <div id="contenu">
 	<h2>Liste des fiches de frais signées à valider</h2>
 
-	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
+	<?php if(!empty($notify)){ echo '<p id="notify" >'.$notify.'</p>';}?>
 
 	<table class="listeLegere">
 		<thead>

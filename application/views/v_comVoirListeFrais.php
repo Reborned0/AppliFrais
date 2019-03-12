@@ -71,7 +71,7 @@ $this->load->helper('url');
 					</td>
 					<td>
 
-						<input style="display: none" type="submit" id="validerModif" name="validerModif" value="Valider"></form>
+						<input style="display: none" type="submit" id="validerModif" name="validerModif" value="Enregistrer"></form>
 						<button onclick="deverouille()" id="modifModif">Modifier</button>
 					</td>
 				</tr>

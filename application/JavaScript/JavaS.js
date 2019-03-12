@@ -104,10 +104,9 @@ function doPrint(){
   window.document.body.innerHTML = bdhtml;
 }
 
-function deverouille(){
-  var test = document.getElementsByClassName("SearchAlpha");
-  for (var i = 0; i < test.length; i++) {
-    test[i].disabled = false;
+function deverouille(TableaudesMontants){
+  for(Elements in TableaudesMontants){
+    document.getElementById("Resul"+Elements).disabled= false;
   }
   document.getElementById("validerModif").style.display = 'inline';
   document.getElementById("modifModif").style.display = 'none';

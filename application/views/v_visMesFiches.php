@@ -26,7 +26,7 @@
 
 				if ($uneFiche['id'] == 'CR') {
 					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
-					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');Expiration('.$uneFiche['mois'].')"');
+					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
 
 
 					echo
@@ -36,7 +36,7 @@
 						<td class="montant">'.$uneFiche['montantValide'].'</td>
 						<td class="date">'.$uneFiche['dateModif'].'</td>
 						<td class="action">'.$modLink.'</td>
-						<td class="action">'.$signeLink.'</td>
+						<td onclick="Expiration('.$uneFiche['mois'].')" class="action">'.$signeLink.'</td>
 					</tr>';
 				}
 				elseif ($uneFiche['id'] == 'CL') {

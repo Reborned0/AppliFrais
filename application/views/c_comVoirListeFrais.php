@@ -14,7 +14,7 @@ $this->load->helper('url');
 				<script type="text/javascript">
 				var TableaudesMontants = new Array();
 				</script>
-
+				<form method="post"  action="<?php echo base_url("c_comptable/majForfait");?>">
 					<?php
 					$i=0;
 
@@ -68,6 +68,11 @@ $this->load->helper('url');
 						</p>
 						';
 						?>
+					</td>
+					<td>
+
+						<input style="display: none" type="submit" id="validerModif" name="validerModif" value="Valider"></form>
+						<button onclick="deverouille()">Modifier</button>
 					</td>
 				</tr>
 

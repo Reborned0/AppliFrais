@@ -78,7 +78,7 @@ $this->load->helper('url');
 </div>
 
 <table class="listeLegere">
-	<caption>Descriptif des éléments hors forfait</caption>
+	<caption>Descriptif des éléments hors forfaits</caption>
 	<tr>
 		<th >Date</th>
 		<th >Libellé</th>

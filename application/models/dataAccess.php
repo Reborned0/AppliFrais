@@ -126,7 +126,9 @@ class dataaccess extends CI_Model {
   public function validerFicheVisi($idVisiteur, $mois){
     $data = array('idEtat' => 'VA');
 
-    $where = "idVisiteur = '$idVisiteur'" ;
+    $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
+
+    $this->db->update('fichefrais', $data, $where);
   }
 
   /**

@@ -61,6 +61,10 @@ body{
 	font-weight:bold;
 }
 
+#finPage{
+  text-align: right;
+}
+
 /* pour r�tablir le mauvais effet sur les nav. modernes */
 html>body #contenu{
   height:auto;

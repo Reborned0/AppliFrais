@@ -111,7 +111,7 @@ class C_comptable extends CI_Controller {
 
 				// obtention de l'id du visiteur et du mois concerné
 				$idVisiteur = $_GET['idVisi'];
-				
+
 				$mois = $this->session->userdata('mois');
 
 				// obtention des données postées
@@ -121,6 +121,21 @@ class C_comptable extends CI_Controller {
 
 				// ... et on revient en modification de la fiche
 				$this->a_comptable->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');
+			}
+			elseif ($action == 'validerFicheVisi') {
+
+				$this->load->model('a_comptable');
+
+				$idVisiteur = $_GET['idVisi'];
+
+				$mois = $this->session->userdata('mois');
+
+				$this->a_comptable->validerFicheVisi($idVisiteur, $mois);
+
+				
+			}
+			elseif ($action == 'refuserFicheVisi') {
+
 			}
 			elseif ($action == 'ajouteFrais') // ajouteLigneFrais demandé : on active la fonction ajouteLigneFrais du modèle visiteur ...
 			{	// TODO : conrôler que l'obtention des données postées ne rend pas d'erreurs

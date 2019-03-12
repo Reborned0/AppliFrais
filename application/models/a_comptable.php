@@ -128,6 +128,11 @@ class A_comptable extends CI_Model {
 		$this->dataaccess->recalculeMontantFiche($idVisiteur,$mois);
 	}
 
+  public function validerFicheVisi($idVisiteur, $mois){
+    
+    $this->dataaccess->validerFicheVisi($idVisiteur, $mois);
+  }
+
 	/**
 	 * Ajoute une ligne de frais hors forfait dans une fiche donnée
 	 *

@@ -70,19 +70,10 @@ $this->load->helper('url');
             ?>
           </td>
           <td>
-
-<<<<<<< HEAD
 						<input style="display: none" type="submit" id="validerModif" name="validerModif" value="Enregistrer"></form>
 						<button onclick="deverouille(TableaudesMontants)" id="modifModif">Modifier</button>
 					</td>
 				</tr>
-=======
-            <input style="display: none" type="submit" id="validerModif" name="validerModif" value="Enregistrer"></form>
-            <button onclick="deverouille()" id="modifModif">Modifier</button>
-          </td>
-        </tr>
->>>>>>> ee154781b16d4fec756910f830956f37781017c5
-
       </table>
     </fieldset>
     <p></p>

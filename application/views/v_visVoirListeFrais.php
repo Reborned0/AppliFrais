@@ -5,6 +5,7 @@ $this->load->helper('url');
 <div id="contenu">
 	<h2>Renseigner ma fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?></h2>
 
+	<form method="post"  action="<?php echo base_url("c_comptable/majForfait");?>">
 	<div class="corpsForm">
 
 		<fieldset>
@@ -67,8 +68,9 @@ $this->load->helper('url');
 					?>
 				</td>
 				<td>
+
+					<input style="display: none" type="submit" id="validerModif" name="validerModif" value="Valider"></form>
 					<button onclick="deverouille()">Modifier</button>
-					<input style="display: none" type="submit" id="validerModif" name="validerModif" value="Valider">
 				</td>
 			</tr>
 
@@ -77,8 +79,9 @@ $this->load->helper('url');
 	<p></p>
 </div>
 
+
 <table class="listeLegere">
-	<caption>Descriptif des éléments hors forfaits</caption>
+	<caption>Descriptif des éléments hors forfait</caption>
 	<tr>
 		<th >Date</th>
 		<th >Libellé</th>

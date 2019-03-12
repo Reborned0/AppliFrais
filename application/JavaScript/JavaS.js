@@ -110,6 +110,7 @@ function deverouille(){
     test[i].disabled = false;
   }
   document.getElementById("validerModif").style.display = 'inline';
+  document.getElementById("modifModif").style.display = 'none';
 }
 
 function Expiration(DateFiche){

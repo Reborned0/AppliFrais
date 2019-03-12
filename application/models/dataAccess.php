@@ -191,18 +191,18 @@ class dataaccess extends CI_Model {
   public function signeFiche($idVisiteur,$mois){
     //met à 'CL' son champs idEtat
     $DateAujourdhui = date("Y-m");
-    $Mois = DecompositionMois($mois);
-    $Annee = DecompositionAnnee($mois);
+    $Mois = $this->DecompositionMois($mois);
+    $Annee = $this->DecompositionAnnee($mois);
 
-    $datedeFiche1 = date_createe($Annee+"-"+$Mois));
-    $datedeFiche2 = date(strtotime(($Annee+1)+"-"+$Mois));
+    $datedeFiche1 = date_create($Annee+"-"+$Mois);
+    $datedeFiche2 = date_create(($Annee+1)+"-"+$Mois);
 
     $laFiche = $this->getLesInfosFicheFrais($idVisiteur,$mois);
     if($laFiche['idEtat']=='CR'){
       if($DateAujourdhui >= $datedeFiche1 && $DateAujourdhui <= $datedeFiche2){
-        $this->majEtatFicheFrais($idVisiteur, $mois, 'RF')
-      }else {
         $this->majEtatFicheFrais($idVisiteur, $mois,'CL');
+      }else {
+        $this->majEtatFicheFrais($idVisiteur, $mois, 'EX');
       }
     }
   }
@@ -368,18 +368,18 @@ class dataaccess extends CI_Model {
   private function DecompositionMois($uneDateFiche){
     if ($uneDateFiche == 6) {
       $Chaine = $uneDateFiche.substr(0,4);
-      return Chaine
+      return Chaine;
     }else {
-      reutnr null;
+      return null;
     }
   }
 
   private function DecompositionAnnee($uneDateFiche){
     if ($uneDateFiche == 6) {
       $Chaine = $uneDateFiche.substr(4,2);
-      return Chaine
+      return Chaine;
     }else {
-      reutnr null;
+      return null;
     }
   }
 }

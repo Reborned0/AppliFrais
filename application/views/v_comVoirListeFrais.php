@@ -14,7 +14,7 @@ $this->load->helper('url');
 				<script type="text/javascript">
 				var TableaudesMontants = new Array();
 				</script>
-				<form method="post"  action="<?php echo base_url("c_comptable/majForfait");?>">
+				<form method="post"  action="<?php echo base_url("c_comptable/majForfait?idVisi=".$_GET['idVisi']);?>">
 					<?php
 					$i=0;
 

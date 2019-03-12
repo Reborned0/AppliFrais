@@ -31,7 +31,7 @@
 					<td class="libelle">'.$uneFiche['libelle'].'</td>
 					<td class="montant">'.$uneFiche['montantValide'].'</td>
 					<td class="date">'.$uneFiche['dateModif'].'</td>
-          <td class="date">'.anchor('c_comptable/voirFiche/'.$uneFiche['mois'], 'Consulter',  'title="Consulter la fiche"').'</td>
+          <td class="date">'.anchor('c_comptable/voirFiche/'.$uneFiche['mois'].'?idVisi='.$uneFiche['idVisiteur'], 'Consulter',  'title="Consulter la fiche"').'</td>
 				</tr>';
       }
 			}

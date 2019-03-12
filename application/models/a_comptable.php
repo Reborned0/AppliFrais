@@ -76,7 +76,7 @@ class A_comptable extends CI_Model {
 		$data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idVisiteur,$mois);
 		$data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idVisiteur,$mois);
 
-		$this->templates->load('t_visiteur', 'c_comVoirListeFrais', $data);
+		$this->templates->load('t_visiteur', 'v_comVoirListeFrais', $data);
 	}
 
 	/**

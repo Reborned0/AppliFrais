@@ -67,8 +67,9 @@ class C_comptable extends CI_Controller {
 				// mémorisation du mode modification en cours
 				// on mémorise le mois de la fiche en cours de modification
 				$this->session->set_userdata('mois', $mois);
-				// obtention de l'id utilisateur courant
-				$idVisiteur = $this->session->userdata('idUser');
+
+				// obtention de l'id de l'utilisateur de la fiche
+				$idVisiteur = $_GET['idVisi'];
 
 				$this->a_comptable->voirFiche($idVisiteur, $mois);
 			}

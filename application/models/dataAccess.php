@@ -375,6 +375,14 @@ class dataaccess extends CI_Model {
     where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
     $this->db->simple_query($req);
   }
+
+  public function getInfoVisiteur($idVisiteur){
+  $req ="Select nom, prenom from visiteur where id='$idVisiteur'";
+  $res = $this->db->query($req);
+  $ligne = $res->first_row('array');
+  return $ligne;
+  }
+
   public function DecompositionMois($uneDateFiche){
     if (strlen($uneDateFiche) == 6) {
       $Chaine = substr($uneDateFiche,4,2);

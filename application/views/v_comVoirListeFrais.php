@@ -3,7 +3,7 @@ $this->load->helper('url');
 ?>
 
 <div id="contenu">
-  <h2>Renseigner ma fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?></h2>
+  <h2>Renseigner la fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?> de  <?= $nomVisiteur." ".$prenomVisiteur ?></h2>
 
 
   <div class="corpsForm">
@@ -14,7 +14,7 @@ $this->load->helper('url');
         <script type="text/javascript">
         var TableaudesMontants = new Array();
         </script>
-        <form method="post"  action="<?php echo base_url("c_comptable/majForfait?idVisi=".$_GET['idVisi']);?>">
+        <form method="post"  action="<?php echo base_url("c_comptable/majForfait?idVisi=".$_GET['idVisi']);?>"> <!-- je ne penses pas que ce soit le bon chemin pour changer dans la base de donnée (faire nouvelle fonction dans le c_comptable) -->
           <?php
           $i=0;
 

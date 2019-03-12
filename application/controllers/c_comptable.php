@@ -132,7 +132,7 @@ class C_comptable extends CI_Controller {
 
 				$this->a_comptable->validerFicheVisi($idVisiteur, $mois);
 
-				
+
 			}
 			elseif ($action == 'refuserFicheVisi') {
 
@@ -175,6 +175,9 @@ class C_comptable extends CI_Controller {
 
 				// ... et on revient en modification de la fiche
 				$this->a_comptable->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" supprimée ...');
+			}
+			elseif ($action == 'majMontantFrais') {
+				 <<
 			}
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
 			{

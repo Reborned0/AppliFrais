@@ -61,6 +61,12 @@
 					<li class="smenu">
 						<?php echo anchor($typepersonne.'/mesFiches', $textefrais , 'title="Consultation de mes fiches de frais"'); ?>
 					</li>
+					<?php
+					if($typepersonne == "c_comptable"){?>
+						<li class="smenu">
+							<?php echo anchor($typepersonne.'/suiviFiche', 'Suivre le paiement des fiches de frais', 'title="Suivi du paiement des fiches de frais"');?>
+						</li><?php
+					}?>
 					<li class="smenu">
 						<?php echo anchor($typepersonne.'/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>
 					</li>

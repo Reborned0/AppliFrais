@@ -121,9 +121,12 @@ $this->load->helper('url');
   </table>
 
   <div id="finPage">
-    <form method="post"  action="<?php echo base_url("c_comptable/majForfait");?>">
+    <form method="post"  action="<?php echo base_url("c_comptable/validerFicheVisi"."?idVisi=".$_GET['idVisi']);?>">
       <input type="submit" id="validerFiche" name="validerFiche" value="Valider">
+    </form>
+    <form method="post" action="<?php echo base_url("c_comptable/refuserFicheVisi"."?idVisi=".$_GET['idVisi']);?>">
       <input type="submit" id="refuserFiche" name="refuserFiche" value="Refuser">
+    </form>
     </div>
 
   </div>

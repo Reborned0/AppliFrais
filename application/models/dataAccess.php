@@ -124,7 +124,19 @@ class dataaccess extends CI_Model {
   }
 
   public function validerFicheVisi($idVisiteur, $mois){
-    $data = array('idEtat' => 'VA');
+    $dateActuelle = date("Y-m-d");
+
+    $data = array('idEtat' => 'VA', 'dateModif' => $dateActuelle);
+
+    $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
+
+    $this->db->update('fichefrais', $data, $where);
+  }
+
+  public function refuserFicheVisi($idVisiteur, $mois){
+    $dateActuelle = date("Y-m-d");
+
+    $data = array('idEtat' => 'RF', 'dateModif' => $dateActuelle, 'commentaire' => 'Votre fiche a été refusée');
 
     $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
 

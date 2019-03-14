@@ -62,6 +62,12 @@ class A_comptable extends CI_Model {
 		$this->templates->load('t_visiteur', 'v_comptFiches', $data);
 	}
 
+  public function suiviFiche(){
+
+    $data['fichesVaMp'] = $this->dataaccess->
+
+  }
+
 	/**
 	 * Présente le détail de la fiche sélectionnée
 	 *
@@ -137,6 +143,15 @@ class A_comptable extends CI_Model {
   public function validerFicheVisi($idVisiteur, $mois){
 
     $this->dataaccess->validerFicheVisi($idVisiteur, $mois);
+
+    $this->mesFiches($idVisiteur);
+  }
+
+  public function refuserFicheVisi($idVisiteur, $mois){
+
+    $this->dataaccess->refuserFicheVisi($idVisiteur, $mois);
+
+    $this->mesFiches($idVisiteur);
   }
 
 	/**

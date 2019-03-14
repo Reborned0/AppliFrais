@@ -49,7 +49,13 @@ class C_comptable extends CI_Controller {
 				$this->session->unset_userdata('mois');
 
 				$idVisiteur = $this->session->userdata('idUser');
+
 				$this->a_comptable->mesFiches($idVisiteur);
+			}
+			elseif ($action == 'suiviFiche') {
+
+				$this->load->model('a_comptable');
+
 			}
 			elseif ($action == 'deconnecter')	// deconnecter demandé : on active la fonction deconnecter du modèle authentif
 			{
@@ -132,10 +138,16 @@ class C_comptable extends CI_Controller {
 
 				$this->a_comptable->validerFicheVisi($idVisiteur, $mois);
 
-
 			}
 			elseif ($action == 'refuserFicheVisi') {
 
+				$this->load->model('a_comptable');
+
+				$idVisiteur = $_GET['idVisi'];
+
+				$mois = $this->session->userdata('mois');
+
+				$this->a_comptable->refuserFicheVisi($idVisiteur, $mois);
 			}
 			elseif ($action == 'ajouteFrais') // ajouteLigneFrais demandé : on active la fonction ajouteLigneFrais du modèle visiteur ...
 			{	// TODO : conrôler que l'obtention des données postées ne rend pas d'erreurs

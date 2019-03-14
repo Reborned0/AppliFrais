@@ -395,6 +395,11 @@ class dataaccess extends CI_Model {
     // $this->db->update('lignefraisforfait', $data, $where);
 
   }
+  public function getMontantFrais($idVisiteur, $Mois){
+    //$req="select idFraisForfait, montantApplique From lignefraisforfait where idVisiteur='$idVisiteur' AND mois ='$Mois'";
+    //$res = $this->db->quey($req);
+    return $res=0;
+  }
 
   public function DecompositionMois($uneDateFiche){
     if (strlen($uneDateFiche) == 6) {

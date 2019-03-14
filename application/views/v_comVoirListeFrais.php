@@ -20,6 +20,7 @@ $this->load->helper('url');
 
           foreach ($lesFraisForfait as $unFrais)
           {
+            print_r($MontantFrais)
             ?>
             <tr>
               <td> <?php

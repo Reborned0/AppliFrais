@@ -64,7 +64,7 @@ class A_comptable extends CI_Model {
 
   public function suiviFiche(){
 
-    $data['fichesVaMp'] = $this->dataaccess->
+    // $data['fichesVaMp'] = $this->dataaccess->
 
   }
 
@@ -81,6 +81,10 @@ class A_comptable extends CI_Model {
 		$data['numMois'] = substr( $mois,4,2);
 		$data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idVisiteur,$mois);
 		$data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idVisiteur,$mois);
+
+    // Recherche des Montants des frais forfaitisé
+    $data['MontantFrais'] = $this->dataaccess->getMontantFrais($_GET['idVisi'],$this->session->userdata('mois'));
+    
     $resultat = $this->dataaccess->getInfoVisiteur($_GET['idVisi']);
     $data['nomVisiteur'] = $resultat['nom'];
     $data['prenomVisiteur'] = $resultat['prenom'];

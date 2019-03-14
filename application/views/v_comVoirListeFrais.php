@@ -9,7 +9,7 @@ $this->load->helper('url');
   <div class="corpsForm">
 
     <fieldset>
-      <legend>Eléments forfaitisééééééééééééééééééééééééééééééééés</legend>
+      <legend>Eléments forfaitisés</legend>
       <table style="text-align: left; width : 90%; ">
         <script type="text/javascript">
         var TableaudesMontants = new Array();

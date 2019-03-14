@@ -34,7 +34,7 @@ $this->load->helper('url');
               echo
               '<p>
               <label for="'.$idFrais.'">'.$libelle.'</label>
-              <input disabled type="text"  class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+              <input disabled type="text" class="SearchAlpha" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
               </p>
               ';
               ?>

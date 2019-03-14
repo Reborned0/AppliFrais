@@ -64,7 +64,7 @@
 					<?php
 					if($typepersonne == "c_comptable"){?>
 						<li class="smenu">
-							<?php echo anchor($typepersonne.'/suiviFiche', 'Suivre le paiement des fiches de frais', 'title="Suivi du paiement des fiches de frais"');?>
+							<?php echo anchor($typepersonne.'/suiviFiches', 'Suivre le paiement des fiches de frais', 'title="Suivi du paiement des fiches de frais"');?>
 						</li><?php
 					}?>
 					<li class="smenu">

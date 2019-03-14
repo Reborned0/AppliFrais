@@ -344,6 +344,16 @@ class dataaccess extends CI_Model {
     return $allFiches;
   }
 
+  public function suiviFiches(){
+    $this->db->select('idVisiteur, mois, montantValide, idEtat');
+
+    $this->db->from('fichefrais');
+
+    $where = "idEtat='VA' OR idEtat='MP'";
+
+    $this->db->where($where);
+  }
+
   /**
   * Calcule le montant total de la fiche pour un visiteur et un mois donnés
   *

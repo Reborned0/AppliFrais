@@ -52,9 +52,11 @@ class C_comptable extends CI_Controller {
 
 				$this->a_comptable->mesFiches($idVisiteur);
 			}
-			elseif ($action == 'suiviFiche') {
+			elseif ($action == 'suiviFiches') {
 
 				$this->load->model('a_comptable');
+
+				$this->a_comptable->suiviFiches();
 
 			}
 			elseif ($action == 'deconnecter')	// deconnecter demandé : on active la fonction deconnecter du modèle authentif

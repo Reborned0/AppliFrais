@@ -22,7 +22,7 @@ class A_visiteur extends CI_Model {
 
 		// chargement du modèle contenant les fonctions génériques
 		$this->load->model('functionslib');
-    
+
 		// obtention de la liste des 6 derniers mois (y compris celui ci)
 		$lesMois = $this->functionslib->getSixDerniersMois();
 
@@ -120,7 +120,7 @@ class A_visiteur extends CI_Model {
 	 * @param $mois : le mois de la fiche concernée
 	 * @param $lesFrais : les quantités liées à chaque type de frais, sous la forme d'un tableau
 	*/
-	public function majForfait($idVisiteur, $mois, $lesFrais)
+	public function majForfait($idVisiteur, $mois, $lesFrais, $MontantFrais)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 		// TODO : valider les données contenues dans $lesFrais ...
 

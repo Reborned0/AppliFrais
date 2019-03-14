@@ -117,7 +117,7 @@ class C_visiteur extends CI_Controller {
 				$lesResulFrais = $this->input->post('Unresul');
 				print_r($_POST);
 
-				$this->a_visiteur->majForfait($idVisiteur, $mois, $lesFrais);
+				$this->a_visiteur->majForfait($idVisiteur, $mois, $lesFrais, $lesResulFrais);
 
 				// ... et on revient en modification de la fiche
 				$this->a_visiteur->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');

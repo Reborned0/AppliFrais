@@ -110,16 +110,22 @@ class dataaccess extends CI_Model {
   * @param $mois sous la forme aaaamm
   * @param $lesFrais tableau associatif de clé idFrais et de valeur la quantité pour ce frais
   */
-  public function majLignesForfait($idVisiteur, $mois, $lesFrais){
+  public function majLignesForfait($idVisiteur, $mois, $lesFrais,$MontantFrais){
     $lesCles = array_keys($lesFrais);
-    foreach($lesCles as $unIdFrais){
-      $qte = $lesFrais[$unIdFrais];
-      $req = "update lignefraisforfait
-      set lignefraisforfait.quantite = $qte
-      where lignefraisforfait.idvisiteur = '$idVisiteur'
-      and lignefraisforfait.mois = '$mois'
-      and lignefraisforfait.idfraisforfait = '$unIdFrais'";
-      $this->db->simple_query($req);
+    $lesclesForfaits = array_keys($MontantFrais);
+    foreach ($lesclesForfaits as $unidMontant) {
+      foreach($lesCles as $unIdFrais){
+        if ($unidMontant == $unIdFrais) {
+          $montant= $MontantFrais[$unidMontant];
+          $qte = $lesFrais[$unIdFrais];
+          $req = "update lignefraisforfait
+          set lignefraisforfait.quantite = $qte, resultatMontantApplique = $montant
+          where lignefraisforfait.idvisiteur = '$idVisiteur'
+          and lignefraisforfait.mois = '$mois'
+          and lignefraisforfait.idfraisforfait = '$unIdFrais'";
+          $this->db->simple_query($req);
+        }
+      }
     }
   }
 
@@ -389,10 +395,10 @@ class dataaccess extends CI_Model {
   }
 
   public function getInfoVisiteur($idVisiteur){
-  $req ="Select nom, prenom from visiteur where id='$idVisiteur'";
-  $res = $this->db->query($req);
-  $ligne = $res->first_row('array');
-  return $ligne;
+    $req ="Select nom, prenom from visiteur where id='$idVisiteur'";
+    $res = $this->db->query($req);
+    $ligne = $res->first_row('array');
+    return $ligne;
   }
 
   public function setMajMontantFrais($idVisiteur, $mois, $lesFrais){

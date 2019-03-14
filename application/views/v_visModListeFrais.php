@@ -40,7 +40,7 @@ $this->load->helper('url');
 							echo '
 							<p>
 							<label>Résultat </label>
-							<input disabled type="text" class="ApplicationCalcul" id="Resul'.$idFrais.'" size="10" maxlength="5" value="">
+							<input onfocus="blur();" type="text" class="ApplicationCalcul" id="Resul'.$idFrais.'" name="Unresul['.$idFrais.']" size="10" maxlength="5">
 							';
 							$i++;
 							?></td>
@@ -60,7 +60,7 @@ $this->load->helper('url');
 					<td><?php
 					echo
 					'<p>
-					<label>Total 2</label>
+					<label>Total Resultats</label>
 					<input disabled type="text" name="TotalFrais" id="TotalFrais" size="10" maxlength="5"/>
 					</p>
 					';

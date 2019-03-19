@@ -12,12 +12,13 @@ $this->load->helper('url');
       <legend>Eléments forfaitisés</legend>
       <table style="text-align: left; width : 90%; ">
         <script type="text/javascript">
+        // TotalFraisParFrais();
+         Verrouillage();
         var TableaudesMontants = new Array();
         </script>
         <form method="post"  action="<?php echo base_url("c_comptable").'/majMontantFrais/'.$this->session->userdata('mois')."?idVisi=".$_GET['idVisi'];?>"> <!-- je ne penses pas que ce soit le bon chemin pour changer dans la base de donnée (faire nouvelle fonction dans le c_comptable) -->
           <?php
           $i=0;
-          print_r($MontantFrais);
           foreach ($lesFraisForfait as $unFrais)
           {
             ?>
@@ -40,11 +41,20 @@ $this->load->helper('url');
               ?>
             </td>
             <td> <?php
-            echo '
-            <p>
-            <label>Résultat </label>
-            <input disabled type="text" class="ApplicationCalcul" id="Resul'.$idFrais.'" name="Resul['.$idFrais.']" size="10" maxlength="5" value="">
-            ';
+            for ($i=0; $i < count($MontantFrais); $i++) {
+              foreach ($MontantFrais[$i] as $key => $IdMontantFrais) {
+
+                if ($IdMontantFrais == $idFrais) {
+                  echo '
+                  <p>
+                  <label>Résultat </label>
+                  <input onkeyup="TotalFraisParFrais();" type="text" class="ApplicationCalcul" id="Montant'.$idFrais.'" name="Resul['.$idFrais.']" size="10" maxlength="5" value="'.$MontantduFrais.'">
+                  ';
+                }
+                $MontantduFrais = $IdMontantFrais;
+              }
+            }
+
             $i++;
             ?></td>
           </tr><?php
@@ -72,61 +82,61 @@ $this->load->helper('url');
           <td>
             <input style="display: none" type="submit" id="validerModif" name="validerModif" value="Enregistrer">
           </form>
-            <button onclick="deverouille(TableaudesMontants)" id="modifModif">Modifier</button>
-          </td>
-        </tr>
-      </table>
-    </fieldset>
-    <p></p>
-  </div>
+          <button onclick="deverouille(TableaudesMontants);TotalFraisParFrais();" id="modifModif">Modifier</button>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <p></p>
+</div>
 
 
-  <table class="listeLegere">
-    <caption>Descriptif des éléments hors forfait</caption>
-    <tr>
-      <th >Date</th>
-      <th >Libellé</th>
-      <th >Montant</th>
-      <!-- <th >&nbsp;</th> -->
-    </tr>
+<table class="listeLegere">
+  <caption>Descriptif des éléments hors forfait</caption>
+  <tr>
+    <th >Date</th>
+    <th >Libellé</th>
+    <th >Montant</th>
+    <!-- <th >&nbsp;</th> -->
+  </tr>
 
-    <?php
-    $total=0;
-    foreach( $lesFraisHorsForfait as $unFraisHorsForfait)
-    {
-      $libelle = $unFraisHorsForfait['libelle'];
-      $date = $unFraisHorsForfait['date'];
-      $montant=$unFraisHorsForfait['montant'];
-      $id = $unFraisHorsForfait['id'];
-      echo
-      '<tr>
-      <td class="date">'.$date.'</td>
-      <td class="libelle">'.$libelle.'</td>
-      <td class="montant">'.$montant.' €</td>'/*
-      <td class="action">'.
-      anchor(	"c_visiteur/supprFrais/$id",
-      "Supprimer ce frais",
-      'title="Suppression d\'une ligne de frais" onclick="return confirm(\'Voulez-vous vraiment supprimer ce frais ?\');"'
-      ).
-      '</td>*/
-      .'</tr>';
-      $total+=$montant;
-    }
-    ?>
-    <tr>
-      <td class="date"></td>
-      <td class="libelle"><b>Montant Total</b></td>
-      <td class="montant"><b><?= number_format($total,2)." €" ?></b></td>
-    </tr>
-  </table>
+  <?php
+  $total=0;
+  foreach( $lesFraisHorsForfait as $unFraisHorsForfait)
+  {
+    $libelle = $unFraisHorsForfait['libelle'];
+    $date = $unFraisHorsForfait['date'];
+    $montant=$unFraisHorsForfait['montant'];
+    $id = $unFraisHorsForfait['id'];
+    echo
+    '<tr>
+    <td class="date">'.$date.'</td>
+    <td class="libelle">'.$libelle.'</td>
+    <td class="montant">'.$montant.' €</td>'/*
+    <td class="action">'.
+    anchor(	"c_visiteur/supprFrais/$id",
+    "Supprimer ce frais",
+    'title="Suppression d\'une ligne de frais" onclick="return confirm(\'Voulez-vous vraiment supprimer ce frais ?\');"'
+    ).
+    '</td>*/
+    .'</tr>';
+    $total+=$montant;
+  }
+  ?>
+  <tr>
+    <td class="date"></td>
+    <td class="libelle"><b>Montant Total</b></td>
+    <td class="montant"><b><?= number_format($total,2)." €" ?></b></td>
+  </tr>
+</table>
 
-  <div id="finPage">
-    <form method="post"  action="<?php echo base_url("c_comptable/validerFicheVisi"."?idVisi=".$_GET['idVisi']);?>">
-      <input type="submit" id="validerFiche" name="validerFiche" value="Valider">
-    </form>
-    <form method="post" action="<?php echo base_url("c_comptable/refuserFicheVisi"."?idVisi=".$_GET['idVisi']);?>">
-      <input type="submit" id="refuserFiche" name="refuserFiche" value="Refuser">
-    </form>
-    </div>
+<div id="finPage">
+  <form method="post"  action="<?php echo base_url("c_comptable/validerFicheVisi"."?idVisi=".$_GET['idVisi']);?>">
+    <input type="submit" id="validerFiche" name="validerFiche" value="Valider">
+  </form>
+  <form method="post" action="<?php echo base_url("c_comptable/refuserFicheVisi"."?idVisi=".$_GET['idVisi']);?>">
+    <input type="submit" id="refuserFiche" name="refuserFiche" value="Refuser">
+  </form>
+</div>
 
-  </div>
+</div>

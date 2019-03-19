@@ -413,7 +413,7 @@ class dataaccess extends CI_Model {
   public function setMajMontantFrais($idVisiteur, $mois, $lesFrais){
 
     foreach ($lesFrais as $key => $value) {
-      $data = array('montantApplique' => $value);
+      $data = array('resultatMontantApplique' => $value);
       $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois, 'idFraisForfait' => $key);
       $this->db->update('lignefraisforfait', $data, $where);
     }
@@ -423,16 +423,13 @@ class dataaccess extends CI_Model {
 
   }
   public function getMontantFrais($idVisiteur, $Mois){
-    // $req="select idFraisForfait, montantApplique From lignefraisforfait where idVisiteur='$idVisiteur' AND mois ='$Mois'";
-    // $res = $this->db->query($req);
-    // return $res;
-    // print_r($res);
-
-    $this->db->select('idFraisForfait, montantApplique');
+    $this->db->select('resultatMontantApplique,idFraisForfait');
     $this->db->from('lignefraisforfait');
     $this->db->where('idVisiteur', $idVisiteur);
     $this->db->where('mois',$Mois);
-    return $this->db->get();
+    $query= $this->db->get();
+    // return $query->result();
+    return $query->result_array();
 
   }
 

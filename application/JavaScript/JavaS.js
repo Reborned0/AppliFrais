@@ -81,6 +81,7 @@ function TotalFraisParFrais(){
   var Total=0.00,NumberUnInput=0.00,ToutlesInputs;
   ToutlesInputs = document.getElementsByClassName('ApplicationCalcul');
   for (var i = 0; i < ToutlesInputs.length; i++) {
+    console.log(ToutlesInputs[i]);
     if (ToutlesInputs[i].value == "") {
       NumberUnInput = 0;
     } else {
@@ -104,9 +105,16 @@ function doPrint(){
   window.document.body.innerHTML = bdhtml;
 }
 
+function Verrouillage(TableaudesMontants){
+  for(Element1 in TableaudesMontants){
+    console.log(Element1);
+    document.getElementById("Montant"+Element1).blur();
+  }
+}
+
 function deverouille(TableaudesMontants){
   for(Elements in TableaudesMontants){
-    document.getElementById("Resul"+Elements).disabled= false;
+    document.getElementById("Montant"+Elements).focus();
   }
   document.getElementById("validerModif").style.display = 'inline';
   document.getElementById("modifModif").style.display = 'none';

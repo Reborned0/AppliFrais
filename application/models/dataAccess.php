@@ -132,7 +132,7 @@ class dataaccess extends CI_Model {
   public function validerFicheVisi($idVisiteur, $mois){
     $dateActuelle = date("Y-m-d");
 
-    $data = array('idEtat' => 'VA', 'dateModif' => $dateActuelle);
+    $data = array('idEtat' => 'VA', 'dateModif' => $dateActuelle, 'commentaire' => '');
 
     $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
 

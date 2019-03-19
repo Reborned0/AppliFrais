@@ -351,13 +351,12 @@ class dataaccess extends CI_Model {
   }
 
   public function suiviFiches(){
-    $this->db->select('idVisiteur, mois, montantValide, idEtat');
-
-    $this->db->from('fichefrais');
-
-    $where = "idEtat='VA' OR idEtat='MP'";
-
-    $this->db->where($where);
+    $req = "select idVisiteur, mois, montantValide, idEtat
+    from fichefrais
+    where idEtat='VA' OR idEtat='MP'";
+    $rs = $this->db->query($req);
+    $allFiches = $rs->result_array();
+    return $allFiches;
   }
 
   /**

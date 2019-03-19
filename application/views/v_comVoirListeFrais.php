@@ -17,10 +17,15 @@ $this->load->helper('url');
         <form method="post"  action="<?php echo base_url("c_comptable").'/majMontantFrais/'.$this->session->userdata('mois')."?idVisi=".$_GET['idVisi'];?>"> <!-- je ne penses pas que ce soit le bon chemin pour changer dans la base de donnée (faire nouvelle fonction dans le c_comptable) -->
           <?php
           $i=0;
-
+          print_r($MontantFrais);
+          foreach ($MontantFrais as $key => $value) {
+            echo $value." -> ";
+            foreach ($key as $key2 => $value2) {
+              echo $value2;
+            }
+          }
           foreach ($lesFraisForfait as $unFrais)
           {
-            print_r($MontantFrais)
             ?>
             <tr>
               <td> <?php

@@ -115,7 +115,6 @@ class C_visiteur extends CI_Controller {
 				// obtention des données postées
 				$lesFrais = $this->input->post('lesFrais');
 				$lesResulFrais = $this->input->post('Unresul');
-				print_r($_POST);
 
 				$this->a_visiteur->majForfait($idVisiteur, $mois, $lesFrais, $lesResulFrais);
 

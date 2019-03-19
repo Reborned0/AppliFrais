@@ -20,9 +20,9 @@ $this->load->helper('url');
           print_r($MontantFrais);
           foreach ($MontantFrais as $key => $value) {
             echo $value." -> ";
-            foreach ($key as $key2 => $value2) {
-              echo $value2;
-            }
+            // foreach ($key as $key2 => $value2) {
+            //   echo $key;
+            // }
           }
           foreach ($lesFraisForfait as $unFrais)
           {

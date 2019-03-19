@@ -68,8 +68,10 @@ class C_comptable extends CI_Controller {
 			{	// TODO : contrôler la validité du second paramètre (mois de la fiche à consulter)
 
 				$this->load->model('a_comptable');
+				$this->load->model('dataaccess');
 
-				// obtention du mois de la fiche à modifier qui doit avoir été transmis
+
+				// obtention du mois de	 la fiche à modifier qui doit avoir été transmis
 				// en second paramètre
 				$mois = $params[0];
 				// mémorisation du mode modification en cours
@@ -78,7 +80,7 @@ class C_comptable extends CI_Controller {
 
 				// obtention de l'id de l'utilisateur de la fiche
 				$idVisiteur = $_GET['idVisi'];
-
+				$this->dataaccess->getMontantFrais($idVisiteur,$mois);
 				$this->a_comptable->voirFiche($idVisiteur, $mois);
 			}
 			elseif ($action == 'modFiche')		// modFiche demandé : on active la fonction modFiche du modèle authentif

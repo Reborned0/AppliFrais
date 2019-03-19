@@ -63,12 +63,7 @@ class A_comptable extends CI_Model {
 	}
 
   public function suiviFiches(){
-
-<<<<<<< HEAD
     $data['fichesVaMp'] = $this->dataaccess->suiviFiches();
-=======
-    // $data['fichesVaMp'] = $this->dataaccess->
->>>>>>> 406073202e900a141fb9304794ad852d8a59bb3e
 
     $this->templates->load('t_visiteur', 'v_comSuiviFiches', $data);
   }
@@ -89,7 +84,7 @@ class A_comptable extends CI_Model {
 
     // Recherche des Montants des frais forfaitisé
     $data['MontantFrais'] = $this->dataaccess->getMontantFrais($_GET['idVisi'],$this->session->userdata('mois'));
-    
+
     $resultat = $this->dataaccess->getInfoVisiteur($_GET['idVisi']);
     $data['nomVisiteur'] = $resultat['nom'];
     $data['prenomVisiteur'] = $resultat['prenom'];

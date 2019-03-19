@@ -21,13 +21,17 @@
             <?php
               foreach($fichesVaMp as $uneFiche)
               {
+								$mois = $uneFiche['mois'];
+								$etat = $uneFiche['idEtat'];
+								$montant = $uneFiche['montantValide'];
+
                 echo//MODIFIER ICI
                 '<tr>
-                  <td class="date">'.$uneFiche['mois'].'</td>
-                  <td class="libelle">'.$uneFiche['idEtat'].'</td>
-                  <td class="montant">'.$uneFiche['montantValide'].'</td>
+                  <td class="date">'.$mois.'</td>
+                  <td class="libelle">'.$etat.'</td>
+                  <td class="montant">'.$montant.' €</td>'
 
-                </tr>';
+                .'</tr>';
 
               }
             ?>

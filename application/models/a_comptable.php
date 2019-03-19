@@ -63,10 +63,7 @@ class A_comptable extends CI_Model {
 	}
 
   public function suiviFiches(){
-<<<<<<< HEAD
 
-=======
->>>>>>> 583a4e90bad062b04e8a40bcca449f72c44812a6
     $data['fichesVaMp'] = $this->dataaccess->suiviFiches();
 
     $this->templates->load('t_visiteur', 'v_comSuiviFiches', $data);

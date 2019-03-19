@@ -1,9 +1,11 @@
 {
-  "ecmaVersion": 6,
+  "ecmaVersion": "8",
   "libs": [
     "browser",
     "jquery",
-    "chai"
+    "chai",
+    "react",
+    "underscore"
   ],
   "loadEagerly": [],
   "dontLoad": [

@@ -80,6 +80,15 @@ class C_comptable extends CI_Controller {
 
 				$this->a_comptable->mpFicheVisi($idVisiteur, $mois);
 			}
+			elseif ($action == 'rembourserFicheVisi') {
+				$this->load->model('a_comptable');
+
+				$idVisiteur = $_GET['idVisi'];
+
+				$mois = $this->session->userdata('mois');
+
+				$this->a_comptable->rembourserFicheVisi($idVisiteur, $mois);
+			}
 			elseif ($action == 'deconnecter')	// deconnecter demandé : on active la fonction deconnecter du modèle authentif
 			{
 				$this->load->model('authentif');

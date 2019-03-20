@@ -158,6 +158,15 @@ class dataaccess extends CI_Model {
     $this->db->update('fichefrais', $data, $where);
   }
 
+  public function rembourserFicheVisi($idVisiteur, $mois){
+
+    $data = array('idEtat' => 'RB');
+
+    $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
+
+    $this->db->update('fichefrais', $data, $where);
+  }
+
   /**
   * met à jour le nombre de justificatifs de la table ficheFrais
   * pour le mois et le visiteur concerné

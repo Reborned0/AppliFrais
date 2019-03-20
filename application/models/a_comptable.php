@@ -181,7 +181,9 @@ class A_comptable extends CI_Model {
   public function synthese($idVisiteur, $mois){
 
     //$this->dataaccess->mpFicheVisi($idVisiteur, $mois);
-
+    $resultat = $this->dataaccess->getInfoVisiteur($_GET['idVisi']);
+    $data['nomVisiteur'] = $resultat['nom'];
+    $data['prenomVisiteur'] = $resultat['prenom'];
 
     $data['numAnnee'] = substr( $mois,0,4);
     $data['numMois'] = substr( $mois,4,2);

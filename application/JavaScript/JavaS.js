@@ -53,7 +53,7 @@ function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
         document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
       } catch (e) {
         console.log(e);
-      }       
+      }
     }
   }
 }
@@ -73,19 +73,22 @@ function CalculOnLoad(TableaudesMontants){
         if(Resultat == null){
           Resultat =0;
         }
-        document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
+        try {
+            document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
+        } catch (e) {
+          console.log(e);
+        }
       }
     }
-    Verrouillage(TableaudesMontants);
-    TotalFraisParFrais();
   }
+  Verrouillage(TableaudesMontants);
+  TotalFraisParFrais();
 }
 
 function TotalFraisParFrais(){
   var Total=0.00,NumberUnInput=0.00,ToutlesInputs;
   ToutlesInputs = document.getElementsByClassName('ApplicationCalcul');
   for (var i = 0; i < ToutlesInputs.length; i++) {
-    console.log(ToutlesInputs[i]);
     if (ToutlesInputs[i].value == "") {
       NumberUnInput = 0;
     } else {
@@ -111,14 +114,13 @@ function doPrint(){
 
 function Verrouillage(TableaudesMontants){
   for(Element1 in TableaudesMontants){
-    console.log(Element1);
-    document.getElementById("Montant"+Element1).blur();
+    document.getElementById("Montant"+Element1).readOnly = true;
   }
 }
 
 function deverouille(TableaudesMontants){
   for(Elements in TableaudesMontants){
-    document.getElementById("Montant"+Elements).focus();
+    document.getElementById("Montant"+Elements).readOnly = false;
   }
   document.getElementById("validerModif").style.display = 'inline';
   document.getElementById("modifModif").style.display = 'none';

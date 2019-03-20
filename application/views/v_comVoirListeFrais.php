@@ -4,7 +4,7 @@ $this->load->helper('url');
 
 <div id="contenu">
   <h2>Renseigner la fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?> de <b><u><?= $nomVisiteur." ".$prenomVisiteur ?></u></b></h2>
-
+	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
 
   <div class="corpsForm">
 

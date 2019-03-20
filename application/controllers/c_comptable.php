@@ -71,6 +71,15 @@ class C_comptable extends CI_Controller {
 				$this->dataaccess->getMontantFrais($idVisiteur,$mois);
 				$this->a_comptable->voirFicheSuivi($idVisiteur, $mois);
 			}
+			elseif ($action == 'synthese') {
+				$this->load->model('a_comptable');
+
+				$idVisiteur = $_GET['idVisi'];
+
+				$mois = $this->session->userdata('mois');
+
+				$this->a_comptable->synthese($idVisiteur, $mois);
+			}
 			elseif ($action == 'misePaiement') {
 				$this->load->model('a_comptable');
 

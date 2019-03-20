@@ -178,18 +178,32 @@ class A_comptable extends CI_Model {
     $this->mesFiches($idVisiteur);
   }
 
+  public function synthese($idVisiteur, $mois){
+
+    //$this->dataaccess->mpFicheVisi($idVisiteur, $mois);
+
+
+    $data['numAnnee'] = substr( $mois,0,4);
+    $data['numMois'] = substr( $mois,4,2);
+    $data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idVisiteur,$mois);
+    $data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idVisiteur,$mois);
+    $data['lesCoutsForfait'] = $this->dataaccess->getLesFraisForfait();
+
+    $this->templates->load('t_visiteur', 'v_comSyntheseSuiviFiche', $data);
+  }
+
   public function mpFicheVisi($idVisiteur, $mois){
 
     $this->dataaccess->mpFicheVisi($idVisiteur, $mois);
 
-    $this->suiviFiches();
+		$this->suiviFiches();
   }
 
   public function rembourserFicheVisi($idVisiteur, $mois){
 
     $this->dataaccess->rembourserFicheVisi($idVisiteur, $mois);
 
-    $this->suiviFiches();
+		$this->suiviFiches();
   }
 
 	/**

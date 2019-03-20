@@ -150,8 +150,9 @@ class dataaccess extends CI_Model {
   }
 
   public function mpFicheVisi($idVisiteur, $mois){
+    $dateActuelle = date("Y-m-d");
 
-    $data = array('idEtat' => 'MP');
+    $data = array('idEtat' => 'MP', 'dateModif' => $dateActuelle);
 
     $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
 
@@ -159,8 +160,9 @@ class dataaccess extends CI_Model {
   }
 
   public function rembourserFicheVisi($idVisiteur, $mois){
+    $dateActuelle = date("Y-m-d");
 
-    $data = array('idEtat' => 'RB');
+    $data = array('idEtat' => 'RB', 'dateModif' => $dateActuelle);
 
     $where = array('idVisiteur' => $idVisiteur, 'mois' => $mois) ;
 

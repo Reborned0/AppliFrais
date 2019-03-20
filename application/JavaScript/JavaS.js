@@ -34,7 +34,11 @@ function calculForfait() {
 
     total+= Input1;
   }
-  document.getElementById('Total').value = total.toFixed(2);
+  try {
+      document.getElementById('Total').value = total.toFixed(2);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
@@ -95,9 +99,12 @@ function TotalFraisParFrais(){
       NumberUnInput = parseFloat(ToutlesInputs[i].value);
     }
     Total += NumberUnInput;
-
   }
-  document.getElementById('TotalFrais').value = Total.toFixed(2);
+  try {
+      document.getElementById('TotalFrais').value = Total.toFixed(2);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function doPrint(){

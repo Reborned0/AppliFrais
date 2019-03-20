@@ -59,6 +59,27 @@ class C_comptable extends CI_Controller {
 				$this->a_comptable->suiviFiches();
 
 			}
+			elseif ($action == 'voirFicheSuivi') {
+				$this->load->model('a_comptable');
+				$this->load->model('dataaccess');
+
+				$mois = $params[0];
+
+				$this->session->set_userdata('mois', $mois);
+
+				$idVisiteur = $_GET['idVisi'];
+				$this->dataaccess->getMontantFrais($idVisiteur,$mois);
+				$this->a_comptable->voirFicheSuivi($idVisiteur, $mois);
+			}
+			elseif ($action == 'misePaiement') {
+				$this->load->model('a_comptable');
+
+				$idVisiteur = $_GET['idVisi'];
+
+				$mois = $this->session->userdata('mois');
+
+				$this->a_comptable->mpFicheVisi($idVisiteur, $mois);
+			}
 			elseif ($action == 'deconnecter')	// deconnecter demandé : on active la fonction deconnecter du modèle authentif
 			{
 				$this->load->model('authentif');

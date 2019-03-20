@@ -92,6 +92,24 @@ class A_comptable extends CI_Model {
 		$this->templates->load('t_visiteur', 'v_comVoirListeFrais', $data);
 	}
 
+  public function voirFicheSuivi($idVisiteur, $mois)
+  {	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
+
+    $data['numAnnee'] = substr( $mois,0,4);
+    $data['numMois'] = substr( $mois,4,2);
+    $data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idVisiteur,$mois);
+    $data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idVisiteur,$mois);
+
+    // Recherche des Montants des frais forfaitisé
+    $data['MontantFrais'] = $this->dataaccess->getMontantFrais($_GET['idVisi'],$this->session->userdata('mois'));
+
+    $resultat = $this->dataaccess->getInfoVisiteur($_GET['idVisi']);
+    $data['nomVisiteur'] = $resultat['nom'];
+    $data['prenomVisiteur'] = $resultat['prenom'];
+
+    $this->templates->load('t_visiteur', 'v_comVoirFicheSuivi', $data);
+  }
+
 	/**
 	 * Présente le détail de la fiche sélectionnée et donne
 	 * accés à la modification du contenu de cette fiche.
@@ -158,6 +176,13 @@ class A_comptable extends CI_Model {
     $this->dataaccess->refuserFicheVisi($idVisiteur, $mois);
 
     $this->mesFiches($idVisiteur);
+  }
+
+  public function mpFicheVisi($idVisiteur, $mois){
+
+    $this->dataaccess->mpFicheVisi($idVisiteur, $mois);
+
+    $this->suiviFiches();
   }
 
 	/**

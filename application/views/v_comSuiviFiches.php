@@ -30,7 +30,7 @@ $this->load->helper('url');
 
 							echo//MODIFIER ICI
 							'<tr>
-							<td class="date">'.$mois.'</td>
+							<td class="date">'.anchor('c_comptable/voirFicheSuivi/'.$uneFiche['mois'].'?idVisi='.$uneFiche['idVisiteur'].'&idEtat='.$uneFiche['idEtat'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
 							<td class="libelle">'.$etat.'</td>
 							<td class="montant">'.$montant.' €</td>'
 
@@ -60,7 +60,7 @@ $this->load->helper('url');
 
 							echo//MODIFIER ICI
 							'<tr>
-							<td class="date">'.$mois.'</td>
+							<td class="date">'.anchor('c_comptable/voirFicheSuivi/'.$uneFiche['mois'].'?idVisi='.$uneFiche['idVisiteur'].'&idEtat='.$uneFiche['idEtat'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
 							<td class="libelle">'.$etat.'</td>
 							<td class="montant">'.$montant.' €</td>'
 

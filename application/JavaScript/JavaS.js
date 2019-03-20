@@ -49,8 +49,11 @@ function CalculFraisParFrais(valeurDuInput,leTableauDesFrais){
       if(Resultat== null){
         Resultat =0.00;
       }
-      console.log(Cléprim);
-      document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
+      try {
+        document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
+      } catch (e) {
+        console.log(e);
+      }       
     }
   }
 }
@@ -73,6 +76,7 @@ function CalculOnLoad(TableaudesMontants){
         document.getElementById('Resul'+Cléprim).value = Resultat.toFixed(2);
       }
     }
+    Verrouillage(TableaudesMontants);
     TotalFraisParFrais();
   }
 }

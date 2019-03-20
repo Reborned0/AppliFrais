@@ -14,7 +14,6 @@ $this->load->helper('url');
         <script type="text/javascript">
         var TableaudesMontants = new Array();
         </script>
-        <form method="post"  action="<?php echo base_url("c_comptable").'/majMontantFrais/'.$this->session->userdata('mois')."?idVisi=".$_GET['idVisi'];?>"> <!-- je ne penses pas que ce soit le bon chemin pour changer dans la base de donnée (faire nouvelle fonction dans le c_comptable) -->
           <?php
           $i=0;
           foreach ($lesFraisForfait as $unFrais)
@@ -117,7 +116,7 @@ $this->load->helper('url');
   <div id="finPage">
     <?php
     if ($_GET['idEtat'] == 'VA') {?>
-      <form method="post"  action="<?php anchor("c_comptable/misePaiement"."?idVisi=".$_GET['idVisi']);?>">
+      <form method="post"  action="<?= base_url("c_comptable").'/misePaiement/'.$this->session->userdata('mois')."?idVisi=".$_GET['idVisi'];?>">
         <input type="submit" id="misePaiement" name="misePaiement" value="Mettre en paiement">
       </form>
     <?php

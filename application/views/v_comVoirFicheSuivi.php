@@ -120,7 +120,14 @@ $this->load->helper('url');
         <input type="submit" id="misePaiement" name="misePaiement" value="Mettre en paiement">
       </form>
     <?php
-  }?>
+  }
+  else {?>
+    <form method="post"  action="<?= base_url("c_comptable").'/rembourserFicheVisi/'.$this->session->userdata('mois')."?idVisi=".$_GET['idVisi'];?>">
+      <input type="submit" id="misePaiement" name="misePaiement" value="Rembourser">
+    </form>
+  <?php
+}
+?>
 
 
 

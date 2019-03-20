@@ -185,6 +185,13 @@ class A_comptable extends CI_Model {
     $this->suiviFiches();
   }
 
+  public function rembourserFicheVisi($idVisiteur, $mois){
+
+    $this->dataaccess->rembourserFicheVisi($idVisiteur, $mois);
+
+    $this->suiviFiches();
+  }
+
 	/**
 	 * Ajoute une ligne de frais hors forfait dans une fiche donnée
 	 *

@@ -3,7 +3,7 @@ $this->load->helper('url');
 ?>
 
 <div id="contenu">
-  <h2>Renseigner la fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?> de <b><u><?= $nomVisiteur." ".$prenomVisiteur ?></u></b></h2>
+  <h2>Renseigner la fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?> de <b><u><?= $prenomVisiteur." ".$nomVisiteur ?></u></b></h2>
 
 
   <div class="corpsForm">
